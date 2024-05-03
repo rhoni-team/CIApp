@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
-      <h1 class="text-3xl font-bold underline">Hello rhonies!</h1>
+      <RouterView />
 </template>
 
 <style scoped></style>
