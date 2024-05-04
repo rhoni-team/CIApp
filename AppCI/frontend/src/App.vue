@@ -1,5 +1,5 @@
 <script setup>
-
+import 'vite/modulepreload-polyfill';
 </script>
 
 <template>
