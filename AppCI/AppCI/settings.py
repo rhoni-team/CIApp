@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-kd_0!ejgp&783=mow#53@n9d5#uw7_gf%h^u2$)vs9k24zo#@o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+DJANGO_VITE_DEV_MODE = DEBUG
+DJANGO_VITE_DEV_SERVER_PORT = 3000 # Using the same port as the dev port defined in vite.config.js
+
 # ALLOWED_HOSTS = ['104.248.77.150', '127.0.0.1']
 ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:8000", ]
@@ -48,7 +51,11 @@ LOCAL_APPS = [
     'backend.apps.BackendConfig',
 ]
 
-INSTALLED_APPS = BASE_APPS + LOCAL_APPS
+THIRD_APPS = [
+    'django_vite',
+]
+
+INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
