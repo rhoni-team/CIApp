@@ -139,8 +139,8 @@ STATIC_URL = "static/"
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'frontend' / 'static' / 'dist'
 STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
-    BASE_DIR / 'backend' / 'static' / 'backend',
 ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
