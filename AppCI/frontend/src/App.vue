@@ -3,7 +3,7 @@ import 'vite/modulepreload-polyfill';
 </script>
 
 <template>
-      <RouterView />
+  <RouterView />
 </template>
 
 <style scoped></style>
