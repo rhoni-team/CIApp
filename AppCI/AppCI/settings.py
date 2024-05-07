@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
+import re
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kd_0!ejgp&783=mow#53@n9d5#uw7_gf%h^u2$)vs9k24zo#@o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'true').lower() == 'true'
 
 DJANGO_VITE_DEV_MODE = DEBUG
 DJANGO_VITE_DEV_SERVER_PORT = 3000 # Using the same port as the dev port defined in vite.config.js
+# DJANGO_VITE_STATIC_URL_PREFIX = BASE_DIR / 'frontend' / 'static' / 'dist'
+DJANGO_VITE_MANIFEST_PATH = BASE_DIR / 'frontend' / 'static' / 'dist' / '.vite' / 'manifest.json'
 
 # ALLOWED_HOSTS = ['104.248.77.150', '127.0.0.1']
 ALLOWED_HOSTS = ['*']
@@ -59,6 +66,8 @@ INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -139,10 +148,30 @@ STATIC_URL = "static/"
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'frontend' / 'static' / 'dist'
 STATICFILES_DIRS = [
     DJANGO_VITE_ASSETS_PATH,
-    BASE_DIR / 'backend' / 'static' / 'backend',
 ]
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# pylint: disable=unused-argument
+# Vite generates files with 8 hash digits
+# http://whitenoise.evans.io/en/stable/django.html#WHITENOISE_IMMUTABLE_FILE_TEST
+
+
+def immutable_file_test(path, url):
+    ''' Match filename with 12 hex digits before the extension
+    # e.g. app.db8f2edc0c8a.js '''
+    return re.match(r"^.+\.[0-9a-f]{8,12}\..+$", url)
+
+
+WHITENOISE_IMMUTABLE_FILE_TEST = immutable_file_test
+
+DEBUG_PROPAGATE_EXCEPTIONS = False
