@@ -15,7 +15,7 @@ env:
 
 jobs:
   ci:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' or 'push'
 
     runs-on: ubuntu-latest
 
