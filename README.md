@@ -17,6 +17,8 @@
 
   <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/appci?color=56BEB8">
 
+  [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/pylint-dev/pylint)
+
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/appci?color=56BEB8" /> -->
 
   <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/appci?color=56BEB8" /> -->
