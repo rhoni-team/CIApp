@@ -16,3 +16,8 @@ autopep:
 		-not -path "*/migrations/*" \
 		-not -path "*/env/lib/*" \
 		-exec autopep8 --in-place '{}' \;
+
+test:
+	source $(VENV_FOLDER)/bin/activate;
+	cd $(DJANGO_PATH);
+	python manage.py test
