@@ -15,7 +15,7 @@ env:
 
 jobs:
   ci:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'push'
 
     runs-on: ubuntu-latest
 
@@ -68,11 +68,15 @@ jobs:
     - name: Install Node dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       working-directory: AppCI/frontend
-      run: npm install
+      run: npm ci
 
     - name: Run ESLint
       working-directory: AppCI/frontend
       run: npx eslint --max-warnings 0
+
+    - name: Run unit tests
+      working-directory: AppCI/frontend
+      run: npm test
 
   cd:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
