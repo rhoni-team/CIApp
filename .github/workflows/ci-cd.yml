@@ -70,6 +70,10 @@ jobs:
       working-directory: AppCI/frontend
       run: npm install
 
+    - name: Run ESLint
+      working-directory: AppCI/frontend
+      run: npx eslint --max-warnings 0
+
   cd:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
