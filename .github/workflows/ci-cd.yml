@@ -15,7 +15,7 @@ env:
 
 jobs:
   ci:
-    if: github.event_name == 'push'
+    if: github.event_name == 'pull_request'
 
     runs-on: ubuntu-latest
 
@@ -70,12 +70,11 @@ jobs:
       working-directory: AppCI/frontend
       run: npm install
 
-    - name: Run ESLint
+    - name: Run Linter with ESLint
       working-directory: AppCI/frontend
       run: npx eslint --max-warnings 0
-      continue-on-error: true
 
-    - name: Run unit tests
+    - name: Run Unit Tests with Vitest
       working-directory: AppCI/frontend
       run: npm test
 
