@@ -73,12 +73,10 @@ jobs:
     - name: Run Linter with ESLint
       working-directory: AppCI/frontend
       run: npx eslint --max-warnings 0
-      continue-on-error: true
 
     - name: Run Unit Tests with Vitest
       working-directory: AppCI/frontend
       run: npm test
-      continue-on-error: true
 
   cd:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
