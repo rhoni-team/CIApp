@@ -2,6 +2,67 @@
 
 
 
+## v0.2.0 (2024-05-21)
+
+### Chore
+
+* chore: Some minor changes to the main view to test the UI styles ([`d3995da`](https://github.com/rhoni-team/AppCI/commit/d3995dad17410a85b1c76da08d3f5a18e13fa24a))
+
+* chore: Add another monet painting to use the slider ([`bf2078f`](https://github.com/rhoni-team/AppCI/commit/bf2078f39049efd565695ab24b57908cf28e9b1c))
+
+* chore: Add Tailwindcss Typography ([`937415c`](https://github.com/rhoni-team/AppCI/commit/937415cfbe9006b5a6a5354fba8e6be39fc6419f))
+
+* chore: Remove the greetings message from django template ([`8309c72`](https://github.com/rhoni-team/AppCI/commit/8309c72f6e632870b65a5f7c8b5e273e82c3e7c2))
+
+* chore: Add the static build folder to the linter&#39;s ignoring files configuration ([`f84ea9e`](https://github.com/rhoni-team/AppCI/commit/f84ea9e19d54903d75ec6b7a7dbf842ee374fab6))
+
+* chore: Add daisyUI ([`d43ff37`](https://github.com/rhoni-team/AppCI/commit/d43ff3787a82f8293b2d9b2b1042f6500e721626))
+
+* chore: Update ci-cd.yml (vitest) ([`142f9fd`](https://github.com/rhoni-team/AppCI/commit/142f9fdcb7123ed56738509a9ea48f0de3d66218))
+
+* chore: Update ci-cd.yml (Vitest) ([`cb7d9b8`](https://github.com/rhoni-team/AppCI/commit/cb7d9b8e76d9f9f8a14d8bac2f9b5ebb7e154191))
+
+* chore: Update ci-cd.yml (Vitest) ([`c0335d4`](https://github.com/rhoni-team/AppCI/commit/c0335d4c321de081a4605fe9d9d4c32708d2bbb4))
+
+### Feature
+
+* feat: Add a light/dark mode button selector ([`b709835`](https://github.com/rhoni-team/AppCI/commit/b709835167f92bcb0972e4da3a35b9e7b13c6f83))
+
+### Refactor
+
+* refactor: Edit the code to match the linter requirements ([`74b11d3`](https://github.com/rhoni-team/AppCI/commit/74b11d3fab7978d72ad1bd96c251ab0e5f811be4))
+
+### Test
+
+* test: Change the assertion to pass the test ([`7c6a9b1`](https://github.com/rhoni-team/AppCI/commit/7c6a9b185a4e179225c38e0fde83993bb0395344))
+
+### Unknown
+
+* Merge pull request #26 from rhoni-team/set-css-styles
+
+Set css styles ([`c2762bd`](https://github.com/rhoni-team/AppCI/commit/c2762bd8aff6b738a72a034b2e73b092637f693a))
+
+* Update ci-cd.yml: Remove the continue-on-error
+
+They didn&#39;t work as I expected, so I had to remove them again ([`f675de1`](https://github.com/rhoni-team/AppCI/commit/f675de180832a90905b6afff57d07a8b291ed3b1))
+
+* Update ci-cd: Add continue-on-error to the linter and testing steps ([`baf3573`](https://github.com/rhoni-team/AppCI/commit/baf35738ce1b6b6f67b6db56906cf0bf73047028))
+
+* Update ci-cd.yml ([`7e1c4b9`](https://github.com/rhoni-team/AppCI/commit/7e1c4b9871f38ed473e1224efd9b73f7cd41b0db))
+
+* Update ci-cd.yml ([`30b328a`](https://github.com/rhoni-team/AppCI/commit/30b328ab53e4c1f8c83b223e9d0d46d668a659aa))
+
+* Update ci-cd.yml ([`c17d6dd`](https://github.com/rhoni-team/AppCI/commit/c17d6dd752dcc1ac8e95da9b46d6401571db007c))
+
+* Update ci-cd.yml ([`b74fb01`](https://github.com/rhoni-team/AppCI/commit/b74fb015e7076a77567a3427bd48bb445620a03c))
+
+* Update ci-cd.yml ([`3bfc8bb`](https://github.com/rhoni-team/AppCI/commit/3bfc8bba65e2e0a2427ffb6c5a316e2d821aeb39))
+
+* Update: ci-cd.yml ([`ad0a4e7`](https://github.com/rhoni-team/AppCI/commit/ad0a4e7a0e612ec0a87b1dada4f3e91601e8c962))
+
+* Update: Add ESLint step to ci-cd workflow ([`973d16a`](https://github.com/rhoni-team/AppCI/commit/973d16abbeb426fba0e2b79ba5845e04bab40ade))
+
+
 ## v0.1.0 (2024-05-08)
 
 ### Build
