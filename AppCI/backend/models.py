@@ -34,3 +34,9 @@ class IsolationWarnings(models.Model):
     """Model for 'Advertencias'"""
     name = models.CharField(max_length=300, null=False, blank=False)
     label = models.CharField(max_length=300, null=True, blank=True)
+
+
+class DiseaseType(models.Model):
+    """Model for 'Tipo de enfermedad'"""
+    name = models.CharField(max_length=300, null=False, blank=False)
+    label = models.CharField(max_length=300, null=True, blank=True)
