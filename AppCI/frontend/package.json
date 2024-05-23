@@ -29,8 +29,10 @@
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
     "vite": "^5.2.0",
     "vitest": "^1.5.3",
+    "vue-tsc": "^2.0.19",
     "webpack-bundle-tracker": "^3.1.0"
   }
 }
