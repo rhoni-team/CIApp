@@ -54,6 +54,7 @@ class Disease(models.Model):
     cleaning_type = models.ManyToManyField(CleaningType, blank=True, null=True, related_name='diseases')
     isolation_time = models.ManyToManyField(IsolationTime, blank=True, null=True, related_name='diseases')
     mandatory_declararion = models.BooleanField(null=True, blank=True)
+    room_sharing = models.BooleanField(null=True, blank=True)
     isolation_warnings = models.ForeignKey(IsolationWarnings, models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
