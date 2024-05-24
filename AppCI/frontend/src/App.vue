@@ -3,7 +3,9 @@ import 'vite/modulepreload-polyfill';
 </script>
 
 <template>
-  <RouterView />
+  <div class="vueapp">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped></style>

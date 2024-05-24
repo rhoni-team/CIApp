@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.vueapp {
+  @apply flex flex-col justify-center items-center p-6 max-w-screen-xl mx-auto border-2;
+}
