@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        // "texture-pattern": "url('@/assets/img/texture.svg')",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/typography"), 
