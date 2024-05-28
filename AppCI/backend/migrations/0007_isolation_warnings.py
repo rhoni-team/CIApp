@@ -27,7 +27,7 @@ def insert_data(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backend', '0006_isolation_time'),
+        ('backend', '0006_special_cases_isolation_time'),
     ]
 
     operations = [
