@@ -10,6 +10,7 @@ DATA = [
     {'name': 'cloro', 'label': 'Cloro al 6%'},
     {'name': 'detergente', 'label': 'Detergente'},
     {'name': 'uv', 'label': 'Uso de UV'},
+    {'name': 'soluciones cloradas alta concentración', 'label': 'soluciones cloradas alta concentración'},
 ]
 
 model_name = 'CleaningType'
@@ -28,7 +29,7 @@ def insert_data(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('backend', '0003_isolation_type'),
+        ('backend', '0003_precaution_type'),
     ]
 
     operations = [
