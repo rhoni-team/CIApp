@@ -12,6 +12,7 @@ DATA = [
     {'name': 'Entomológico', 'label': 'Entomológico'},
     {'name': 'Funcional', 'label': 'Funcional'},
     {'name': 'Preventivo', 'label': 'Preventivo'},
+    {'name': 'Protector', 'label': 'Protector'},
     {'name': 'Oscuro', 'label': 'Oscuro'},
     {'name': 'no', 'label': 'No'},
 ]

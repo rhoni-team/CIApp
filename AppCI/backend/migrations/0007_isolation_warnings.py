@@ -9,6 +9,7 @@ DATA = [
     {'label': 'Uso de alcohol no destruye esporas'},
     {'label': 'Uso obligatorio de N95'},
     {'label': 'lavado de manos con agua y jabón'},
+    {'label': 'Establecer origen, no se transmiten de persona a persona'},
 ]
 
 model_name = 'IsolationWarnings'
