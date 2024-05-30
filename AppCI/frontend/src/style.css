@@ -19,6 +19,16 @@
   min-width: min-content;
 }
 
+.disease-datasheet-search-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .disease-datasheet-item-wrapper {
   display: grid;
   grid-template-columns: minmax(max-content, 2fr) minmax(max-content, 2fr) minmax(max-content, 1fr);
@@ -35,9 +45,19 @@
   justify-content: center;
   align-content: center;
   gap: 10px;
-  align-items: baseline;
+  align-items: center;
   margin-bottom: 20px;
+  
 }
+
+.disease-type-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  @apply border border-y-transparent border-gray-300 rounded-badge p-2;
+}
+
 
 .disease-title{
   @apply prose text-center mx-10;
