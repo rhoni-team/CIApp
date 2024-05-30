@@ -24,7 +24,7 @@ class PreProcessDiseasesData():
     def __init__(self, diseases_df: "pd.Dataframe") -> None:
         self.diseases_df = diseases_df
         self.diseases_df = self.replace_column_names()
-        self.diseases_df = self.replace_npnan_by_none()
+        self.diseases_df = self.replace_npnan_by_none(self.diseases_df)
         self.units_of_time = []
         self.isolation_time_clean_column = []
         self.with_atb = []
@@ -34,9 +34,9 @@ class PreProcessDiseasesData():
         cleaned_columns_df = replace_original_column_names(df_data=self.diseases_df)
         return cleaned_columns_df
 
-    def replace_npnan_by_none(self):
+    def replace_npnan_by_none(self, diseases_df):
         """replace np nan values in dataframe for None"""
-        df_with_none = self.diseases_df.replace(to_replace=np.nan, value=None)
+        df_with_none = diseases_df.replace(to_replace=np.nan, value=None)
         return df_with_none
 
     def get_diseases_data(self) -> List[dict]:
@@ -71,6 +71,8 @@ class PreProcessDiseasesData():
 
         diseases_df["isolation_time"] = self.isolation_time_clean_column
         diseases_df["isolation_unit"] = self.units_of_time
+
+        diseases_df = self.replace_npnan_by_none(diseases_df)
 
         return diseases_df
     
@@ -155,28 +157,3 @@ class PreProcessDiseasesData():
             else:
                 self.with_atb.append(None)
 
-
-# len(isolation_time_clean_column)
-# len(isolation_time_column)
-# len(with_atb)
-# len(units_of_time)
-
-# def find_time_unit_in_isolation_time(def):
-
-            #     elif self.lookup_time_unit("meses"):
-            #         self.save_unit_of_time_value(row, "months")
-            #     elif self.lookup_time_unit("año"):
-            #         self.save_unit_of_time_value(row, "days")
-            #     elif self.lookup_time_unit("no"):
-            #         self.save_unit_of_time_value(row, "no")
-            #     else:
-            #         isolation_time_clean_column.append(None)
-            #         units_of_time.append(None)
-            #     if row.find("atb") == is_found:
-            #         with_atb.append(True)
-            #     else:
-            #         with_atb.append(None)
-            # else:
-            #     isolation_time_clean_column.append(None)
-            #     units_of_time.append(None)
-            #     with_atb.append(None)
