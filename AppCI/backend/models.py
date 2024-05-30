@@ -51,7 +51,7 @@ class Disease(models.Model):
     isolation_time = models.IntegerField(blank=True, null=True)
     isolation_unit = models.ForeignKey("UnitsOfTime", models.SET_NULL, blank=True, null=True)
     with_atb = models.BooleanField(blank=True, null=True)
-    other_isolation = models.CharField(max_length=500, null=True, blank=True)
+    other_isolation = models.ForeignKey(SpecialCasesIsolationTime, models.SET_NULL, blank=True, null=True)
     mandatory_declararion = models.BooleanField(null=True, blank=True)
     room_sharing = models.BooleanField(null=True, blank=True)
     isolation_warnings = models.ForeignKey(IsolationWarnings, models.SET_NULL, blank=True, null=True)
