@@ -13,7 +13,6 @@ class AddDiseasesData:
 
     def add_all_data_to_disease_data(self):
         """run all auxiliary functions to save all data"""
-        print("ENTRA")
         self.add_name_and_label_to_instance_data()
         self.add_disease_type_to_instance_data()
         self.add_precaution_type_to_instance_data()
@@ -41,7 +40,6 @@ class AddDiseasesData:
     def add_name_and_label_to_instance_data(self):
         """add disease.name and disease.label to instance dictionary"""
         label = self.row_data.get('enfermedad')
-        print(label)
         self.disease_instance_data["label"] = label
         self.disease_instance_data["name"] = clean_text_snake_case(label)
 

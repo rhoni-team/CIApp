@@ -8,11 +8,8 @@ from backend.data_loading.add_disease_related_instances import AddDiseasesData
 
 diseases_data = get_diseases_data()
 
-print(diseases_data)
-
 
 model_name = 'Disease'
-
 
 
 def insert_data(apps, schema_editor):

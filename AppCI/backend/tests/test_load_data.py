@@ -47,9 +47,6 @@ class LoadDataTest(TestCase):
 
         row_num_df = len(isolation_time_column)
 
-        print(self.preprocess_utils.isolation_time_clean_column)
-        print(self.preprocess_utils.units_of_time)
-
         self.assertEqual(row_num_df, len(self.preprocess_utils.isolation_time_clean_column))
         self.assertEqual(row_num_df, len(self.preprocess_utils.units_of_time))
         
@@ -59,8 +56,6 @@ class LoadDataTest(TestCase):
         self.preprocess_utils.save_with_atb_param(isolation_time_column=isolation_time_column)
 
         row_num_df = len(isolation_time_column)
-
-        print(self.preprocess_utils.with_atb)
 
         self.assertEqual(row_num_df, len(self.preprocess_utils.with_atb))
 
@@ -72,10 +67,4 @@ class LoadDataTest(TestCase):
         first_row = diseases_data[0]
         got_colum_names = list(first_row.keys())
 
-        print(expected_colum_names)
-        print(got_colum_names)
-
         self.assertListEqual(expected_colum_names, got_colum_names)
-
-        print(diseases_data)
-        
