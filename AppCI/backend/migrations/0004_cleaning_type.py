@@ -6,10 +6,10 @@ from clean_text_rhoni import clean_text_snake_case
 
 
 DATA = [
-    {'name': 'monopersulfato', 'label': 'Monopersulfato de potasio 20%'},
+    {'name': 'monopersulfato_de_potasio_20', 'label': 'Monopersulfato de potasio 20%'},
     {'name': 'cloro', 'label': 'Cloro al 6%'},
     {'name': 'detergente', 'label': 'Detergente'},
-    {'name': 'uv', 'label': 'Uso de UV'},
+    {'name': 'luz', 'label': 'Luz'},
     {'name': 'soluciones cloradas alta concentración', 'label': 'soluciones cloradas alta concentración'},
 ]
 
