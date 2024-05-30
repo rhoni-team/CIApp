@@ -4,6 +4,7 @@ from clean_text_rhoni import clean_text_snake_case
 
 
 DATA = [
+    {'disease_name': 'Difteria Cutánea', 'isolation_time': "Hasta dos cultivos negativos de la lesión cutánea"},
     {'disease_name': 'rubeola', 'isolation_time': 'El periodo de incubación de la rubéola oscila entre 14 y 18 días, con una rango de 12 a 23 días.'},
     {'disease_name': 'sarampion', 'isolation_time': 'El período de incubación dura aproximadamente 10 días, y varía de 7 a 18 días desde la exposición hasta el comienzo de la fiebre, y unos 14 días hasta que aparece la erupción, con un rango de 7 a 21 días.'},
     {'disease_name': 'Coqueluche', 'isolation_time': '5 días de ATB o 21 sin ATB'},
