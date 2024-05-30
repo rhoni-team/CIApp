@@ -19,7 +19,7 @@ processed_disease_column_names = [
     "modo_de_limpieza",
     "observacion_qx",
     "tiempo_de_aislamiento",
-    "declaracion_obligatioria",
+    "declaracion_obligatoria",
     "comparte_habitacion",
     "advertencia",
     "isolation_time",
