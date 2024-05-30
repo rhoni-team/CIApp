@@ -1,5 +1,5 @@
 """module with auxiliary functions to add instances in disease model"""
-from clean_text_rhoni import clean_text_snake_case
+from clean_text_rhoni import clean_text_snake_case, clean_text
 
 
 class AddDiseasesData:
@@ -21,6 +21,8 @@ class AddDiseasesData:
         self.add_isolation_unit_to_instance_data()
         self.add_with_atb_to_instance_data()
         self.add_other_isolation_to_instance_data()
+        self.add_mandatory_declaration_to_instance_data()
+        self.add_room_sharing_to_instance_data()
 
     def add_name_and_label_to_instance_data(self):
         """add disease.name and disease.label to instance dictionary"""
@@ -84,6 +86,31 @@ class AddDiseasesData:
             self.disease_instance_data["other_isolation"] = special_case_instance
         except special_cases_model.DoesNotExist:
             self.disease_instance_data["other_isolation"] = None
+
+    def add_mandatory_declaration_to_instance_data(self):
+        """add mandatory declaration bool value to instance data"""
+        self.add_si_no_boolean(field_name_row="declaracion_obligatoria",
+                               field_name_disease_table="mandatory_declaration")
+
+    def add_room_sharing_to_instance_data(self):
+        """add mandatory declaration bool value to instance data"""
+        self.add_si_no_boolean(field_name_row="comparte_habitacion",
+                               field_name_disease_table="room_sharing")
+
+    def add_si_no_boolean(self, field_name_row, field_name_disease_table):
+        """transform si no data to boolean value and save it in instance"""
+        cell_content = self.row_data.get(field_name_row)
+        
+        if cell_content is not None:
+            cell_content = clean_text(cell_content)
+            if cell_content == "si":
+                self.disease_instance_data[field_name_disease_table] = True
+            elif cell_content == "no":
+                self.disease_instance_data[field_name_disease_table] = False
+            else:
+                self.disease_instance_data[field_name_disease_table] = None
+        else:
+            self.disease_instance_data[field_name_disease_table] = None
     
     def get_related_instance(self, cell_content: str, model_name: str) -> "model":
         """get the related disease FK instance from cell content"""
