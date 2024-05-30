@@ -1,5 +1,5 @@
 map_original_column_names = {
-	"Tipo":"tipo_de_enfermedad",
+    "Tipo": "tipo_de_enfermedad",
     "Enfermedad": "enfermedad",
     "Tipo de aislamiento": "tipo_de_aislamiento",
     "tipo_de_precaucion": "tipo_de_precaucion",
@@ -28,7 +28,7 @@ processed_disease_column_names = [
 ]
 
 
-def replace_original_column_names(df_data): 
+def replace_original_column_names(df_data):
     """replace the original and complex csv column names with its simplified ones"""
     df_data.rename(columns=map_original_column_names, inplace=True)
     return df_data

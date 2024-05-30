@@ -9,7 +9,7 @@ diseases_df = pd.read_csv(
     './backend/data_loading/data/diseases_table_csv.csv')
 
 
-def get_diseases_data(diseases_df: "pd.DataFrame"= diseases_df) -> List[dict]:
+def get_diseases_data(diseases_df: "pd.DataFrame" = diseases_df) -> List[dict]:
     """get diseases data as a list of dictionaries"""
     preprocess_utils = PreProcessDiseasesData(diseases_df=diseases_df)
     diseases_data = preprocess_utils.get_diseases_data()
@@ -18,7 +18,7 @@ def get_diseases_data(diseases_df: "pd.DataFrame"= diseases_df) -> List[dict]:
 
 class PreProcessDiseasesData():
     """class with functions to read and clean diseases data from a pandas dataframe"""
-    
+
     not_found = -1
 
     def __init__(self, diseases_df: "pd.Dataframe") -> None:
@@ -29,7 +29,7 @@ class PreProcessDiseasesData():
         self.isolation_time_clean_column = []
         self.with_atb = []
 
-    def replace_column_names(self): 
+    def replace_column_names(self):
         """replace original column names with cleaner names"""
         cleaned_columns_df = replace_original_column_names(df_data=self.diseases_df)
         return cleaned_columns_df
@@ -75,7 +75,7 @@ class PreProcessDiseasesData():
         diseases_df = self.replace_npnan_by_none(diseases_df)
 
         return diseases_df
-    
+
     def add_atb_column_to_diseases_dataframe(self, diseases_df: "pd.DataFrame") -> "pd.DataFrame":
         """add atb column to diseases dataframe"""
         isolation_time_column = diseases_df.loc[:, 'tiempo_de_aislamiento']
@@ -114,7 +114,7 @@ class PreProcessDiseasesData():
             clean_cell = clean_text(cell_content)
             return clean_cell
         return cell_content
-    
+
     def has_time_unit(self, cell):
         """Assert if any time unit is present in cell content"""
         terms_to_lookup = ["ano", "meses", "semanas", "dias", "alta medica", "muerte"]
@@ -156,4 +156,3 @@ class PreProcessDiseasesData():
                     self.with_atb.append(False)
             else:
                 self.with_atb.append(None)
-

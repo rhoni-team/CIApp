@@ -1,3 +1,4 @@
+"""module with test class for adding diseases data"""
 import pandas as pd
 from django.apps import apps
 from django.test.testcases import TestCase
@@ -21,7 +22,7 @@ mocked_row = {
     'isolation_time': None,
     'isolation_unit': None,
     'with_atb': None
-    }
+}
 
 
 class AddDiseasesDataTest(TestCase):
@@ -29,17 +30,17 @@ class AddDiseasesDataTest(TestCase):
 
     @classmethod
     def setUpTestData(cls) -> None:
-       """ class methods and variables """
-       cls.test_df = test_df
-       cls.mocked_row = mocked_row
+        """ class methods and variables """
+        cls.test_df = test_df
+        cls.mocked_row = mocked_row
 
     def test_add_si_no_boolean(self):
         """test if function replace si, no or None by bool value"""
         utils_add_data = AddDiseasesData(apps=apps, row_data=mocked_row)
 
         utils_add_data.add_si_no_boolean(field_name_row="declaracion_obligatoria",
-                               field_name_disease_table="mandatory_declaration")
-        
+                                         field_name_disease_table="mandatory_declaration")
+
         self.assertTrue(utils_add_data.disease_instance_data.get("mandatory_declaration"))
 
         # mocked data with no
@@ -49,12 +50,11 @@ class AddDiseasesDataTest(TestCase):
         utils_add_data = AddDiseasesData(apps=apps, row_data=self.mocked_row)
 
         utils_add_data.add_si_no_boolean(field_name_row="declaracion_obligatoria",
-                               field_name_disease_table="mandatory_declaration")
-        
+                                         field_name_disease_table="mandatory_declaration")
+
         self.assertFalse(utils_add_data.disease_instance_data.get("mandatory_declaration"))
 
         utils_add_data.add_si_no_boolean(field_name_row="comparte_habitacion",
-                               field_name_disease_table="room_sharing")
-        
+                                         field_name_disease_table="room_sharing")
+
         self.assertIsNone(utils_add_data.disease_instance_data.get("room_sharing"))
-    

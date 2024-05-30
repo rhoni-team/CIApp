@@ -33,7 +33,7 @@ class AddDiseasesData:
                     cleaning_type = clean_text_snake_case(cleaning_type)
                     ct_instance = cleaning_type_model.objects.get(name=cleaning_type)
                     self.cleaning_type_instances.append(ct_instance)
-            except:
+            except BaseException:
                 self.cleaning_type_instances = None
         return self.cleaning_type_instances
 
@@ -46,15 +46,15 @@ class AddDiseasesData:
     def add_disease_type_to_instance_data(self):
         """add disease type to instance data dictionary"""
         disease_type = self.get_related_instance(
-                                            cell_content=self.row_data["tipo_de_enfermedad"],
-                                            model_name="DiseaseType")
+            cell_content=self.row_data["tipo_de_enfermedad"],
+            model_name="DiseaseType")
         self.disease_instance_data["disease_type"] = disease_type
 
     def add_precaution_type_to_instance_data(self):
         """add precaution type to instance data dictionary"""
         precaution_type = self.get_related_instance(
-                                            cell_content=self.row_data["tipo_de_precaucion"],
-                                            model_name="PrecautionType")
+            cell_content=self.row_data["tipo_de_precaucion"],
+            model_name="PrecautionType")
         self.disease_instance_data["precaution_type"] = precaution_type
 
     def add_isolation_time_to_instance_data(self):
@@ -65,8 +65,8 @@ class AddDiseasesData:
     def add_isolation_unit_to_instance_data(self):
         """add isolation unit FK to instance data"""
         isolation_unit = self.get_related_instance(
-                                            cell_content=self.row_data["isolation_unit"],
-                                            model_name="UnitsOfTime")
+            cell_content=self.row_data["isolation_unit"],
+            model_name="UnitsOfTime")
         self.disease_instance_data["isolation_unit"] = isolation_unit
 
     def get_related_instance(self, cell_content: str, model_name: str) -> "model":
@@ -78,10 +78,10 @@ class AddDiseasesData:
             cell_content = clean_text_snake_case(cell_content)
             try:
                 related_instance = related_model.objects.get(name=cell_content)
-            except:
+            except BaseException:
                 related_instance = None
         return related_instance
-    
+
     def add_with_atb_to_instance_data(self):
         """add with atb boolean value to instance"""
         with_atb = self.row_data.get('with_atb')
@@ -91,7 +91,7 @@ class AddDiseasesData:
         """add isolation special cases to instance data"""
         special_cases_model = self.apps.get_model('backend', "SpecialCasesIsolationTime")
         disease_name = self.disease_instance_data.get("name")
-        
+
         try:
             special_case_instance = special_cases_model.objects.get(disease_name=disease_name)
             self.disease_instance_data["other_isolation"] = special_case_instance
@@ -111,7 +111,7 @@ class AddDiseasesData:
     def add_si_no_boolean(self, field_name_row, field_name_disease_table):
         """transform si no data to boolean value and save it in instance"""
         cell_content = self.row_data.get(field_name_row)
-        
+
         if cell_content is not None:
             cell_content = clean_text(cell_content)
             if cell_content == "si":
@@ -122,7 +122,7 @@ class AddDiseasesData:
                 self.disease_instance_data[field_name_disease_table] = None
         else:
             self.disease_instance_data[field_name_disease_table] = None
-    
+
     def add_observation_qx_to_instance_data(self):
         """add observation qx content to disease instance dictionary"""
         cell_content = self.row_data.get("observacion_qx")
