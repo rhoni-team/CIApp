@@ -24,6 +24,20 @@ class AddDiseasesData:
         self.add_mandatory_declaration_to_instance_data()
         self.add_room_sharing_to_instance_data()
 
+    def add_cleaning_types_to_instance_data(self):
+        """add cleaning type instances. It is a many to many related model"""
+        cleaning_type_model = self.apps.get_model('backend', 'CleaningType')
+        cleaning_type_content = self.row_data["modo_de_limpieza"]
+        if cleaning_type_content is not None:
+            try:
+                for cleaning_type in cleaning_type_content:
+                    cleaning_type = clean_text_snake_case(cleaning_type)
+                    ct_instance = cleaning_type_model.objects.get(name=cleaning_type)
+                    self.cleaning_type_instances.append(ct_instance)
+            except:
+                self.cleaning_type_instances = None
+        return self.cleaning_type_instances
+
     def add_name_and_label_to_instance_data(self):
         """add disease.name and disease.label to instance dictionary"""
         label = self.row_data.get('enfermedad')
@@ -45,20 +59,6 @@ class AddDiseasesData:
                                             model_name="PrecautionType")
         self.disease_instance_data["precaution_type"] = precaution_type
 
-    def add_cleaning_types_to_instance_data(self):
-        """add cleaning type instances. It is a many to many related model"""
-        cleaning_type_model = self.apps.get_model('backend', 'CleaningType')
-        cleaning_type_content = self.row_data["modo_de_limpieza"]
-        if cleaning_type_content is not None:
-            try:
-                for cleaning_type in cleaning_type_content:
-                    cleaning_type = clean_text_snake_case(cleaning_type)
-                    ct_instance = cleaning_type_model.objects.get(name=cleaning_type)
-                    self.cleaning_type_instances.append(ct_instance)
-            except:
-                self.cleaning_type_instances = None
-        return self.cleaning_type_instances
-
     def add_isolation_time_to_instance_data(self):
         """add isolation time to instance data"""
         isolation_time = self.row_data.get('isolation_time')
@@ -71,6 +71,19 @@ class AddDiseasesData:
                                             model_name="UnitsOfTime")
         self.disease_instance_data["isolation_unit"] = isolation_unit
 
+    def get_related_instance(self, cell_content: str, model_name: str) -> "model":
+        """get the related disease FK instance from cell content"""
+        related_instance = None
+        related_model = self.apps.get_model('backend', model_name)
+
+        if cell_content is not None:
+            cell_content = clean_text_snake_case(cell_content)
+            try:
+                related_instance = related_model.objects.get(name=cell_content)
+            except:
+                related_instance = None
+        return related_instance
+    
     def add_with_atb_to_instance_data(self):
         """add with atb boolean value to instance"""
         with_atb = self.row_data.get('with_atb')
@@ -112,15 +125,7 @@ class AddDiseasesData:
         else:
             self.disease_instance_data[field_name_disease_table] = None
     
-    def get_related_instance(self, cell_content: str, model_name: str) -> "model":
-        """get the related disease FK instance from cell content"""
-        related_instance = None
-        related_model = self.apps.get_model('backend', model_name)
-
-        if cell_content is not None:
-            cell_content = clean_text_snake_case(cell_content)
-            try:
-                related_instance = related_model.objects.get(name=cell_content)
-            except:
-                related_instance = None
-        return related_instance
+    def add_observation_qx_to_instance_data(self):
+        """add observation qx content to disease instance dictionary"""
+        cell_content = self.row_data.get("observacion_qx")
+        self.disease_instance_data["qx_observation"] = cell_content
