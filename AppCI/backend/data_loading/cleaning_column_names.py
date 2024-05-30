@@ -6,7 +6,7 @@ map_original_column_names = {
     "Modo de limpieza": "modo_de_limpieza",
     "Observación (Modo de limp QX)": "observacion_qx",
     "Tiempo de aislamiento": "tiempo_de_aislamiento",
-    "declaración obligatoria": "declaracion_obligatioria",
+    "declaración obligatoria": "declaracion_obligatoria",
     "Comparte habitación": "comparte_habitacion",
     "Advertencia": "advertencia",
 }
