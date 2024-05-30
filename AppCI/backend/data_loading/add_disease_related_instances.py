@@ -19,6 +19,8 @@ class AddDiseasesData:
         self.add_precaution_type_to_instance_data()
         self.add_isolation_time_to_instance_data()
         self.add_isolation_unit_to_instance_data()
+        self.add_with_atb_to_instance_data()
+        self.add_other_isolation_to_instance_data()
 
     def add_name_and_label_to_instance_data(self):
         """add disease.name and disease.label to instance dictionary"""
@@ -67,6 +69,22 @@ class AddDiseasesData:
                                             model_name="UnitsOfTime")
         self.disease_instance_data["isolation_unit"] = isolation_unit
 
+    def add_with_atb_to_instance_data(self):
+        """add with atb boolean value to instance"""
+        with_atb = self.row_data.get('with_atb')
+        self.disease_instance_data["with_atb"] = with_atb
+
+    def add_other_isolation_to_instance_data(self):
+        """add isolation special cases to instance data"""
+        special_cases_model = self.apps.get_model('backend', "SpecialCasesIsolationTime")
+        disease_name = self.disease_instance_data.get("name")
+        
+        try:
+            special_case_instance = special_cases_model.objects.get(disease_name=disease_name)
+            self.disease_instance_data["other_isolation"] = special_case_instance
+        except special_cases_model.DoesNotExist:
+            self.disease_instance_data["other_isolation"] = None
+    
     def get_related_instance(self, cell_content: str, model_name: str) -> "model":
         """get the related disease FK instance from cell content"""
         related_instance = None
