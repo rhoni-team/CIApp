@@ -57,3 +57,4 @@ class AddDiseasesDataTest(TestCase):
                                field_name_disease_table="room_sharing")
         
         self.assertIsNone(utils_add_data.disease_instance_data.get("room_sharing"))
+    
