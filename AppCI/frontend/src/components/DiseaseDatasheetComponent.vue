@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import infoIcon from '@/assets/icons/infoIcon.vue';
 import fileIcon from '@/assets/icons/fileIcon.vue';
 import okIcon from '@/assets/icons/okIcon.vue';
@@ -7,29 +7,40 @@ import warningIcon from '@/assets/icons/warningIcon.vue';
 import bugIcon from '@/assets/icons/bugIcon.vue';
 import squaresIcon from '@/assets/icons/squaresIcon.vue';
 
-import DiseaseDatasheet from '@/types/DiseaseDatasheet';
+import type DiseaseDatasheet from '@/types/DiseaseDatasheet';
 
-const props = defineProps<{
-  diseaseSheet: DiseaseDatasheet | null;
+defineProps<{
+  diseaseSheet: DiseaseDatasheet | null
 }>();
 
 </script>
 
 <template>
   <div
-    v-if="props.diseaseSheet"
+    v-if="diseaseSheet"
     class="disease-datasheet-wrapper"
   >
     <div class="disease-title-wrapper">
       <div class="disease-type-icon-wrapper">
         <bug-icon class="size-6 text-pink-400" />
-        {{ props.diseaseSheet.type }}
+        {{ diseaseSheet.type }}
       </div>
       <h1 class="disease-title">
-        {{ props.diseaseSheet ? props.diseaseSheet.name : "No se seleccionó" }}
+        {{ diseaseSheet ? diseaseSheet.name : "No se seleccionó" }}
       </h1>
-      <info-icon class="size-8 text-orange-400" />
-      <div v-if="props.diseaseSheet.warnings.length != 0">
+
+      <div v-if="diseaseSheet.info.length != 0">
+        <div
+          v-for="(item, key) in diseaseSheet.info"
+          :key="key"
+          class="tooltip"
+          :data-tip="`${item}`"
+        >
+          <info-icon class="size-11 text-orange-400" />
+        </div>
+      </div>
+
+      <div v-if="diseaseSheet.warnings.length != 0">
         <warning-icon
           class="size-8 text-red-500 blink"
           onclick="warning_modal.showModal()"
@@ -40,7 +51,7 @@ const props = defineProps<{
         >
           <div class="modal-box">
             <p
-              v-for="(warning, key) in props.diseaseSheet.warnings"
+              v-for="(warning, key) in diseaseSheet.warnings"
               :key="key"
               class="py-4"
             >
@@ -63,7 +74,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-icons-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.cautions.list"
+          v-for="(item, key) in diseaseSheet.cautions.list"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -77,7 +88,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.cautions.info"
+          v-for="(item, key) in diseaseSheet.cautions.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -85,7 +96,7 @@ const props = defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in props.diseaseSheet.cautions.files"
+          v-for="(item, key) in diseaseSheet.cautions.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -110,7 +121,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-icons-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.cleaning.list"
+          v-for="(item, key) in diseaseSheet.cleaning.list"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -124,7 +135,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.cleaning.info"
+          v-for="(item, key) in diseaseSheet.cleaning.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -132,7 +143,7 @@ const props = defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in props.diseaseSheet.cleaning.files"
+          v-for="(item, key) in diseaseSheet.cleaning.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -157,19 +168,19 @@ const props = defineProps<{
 
       <div class="disease-datasheet-isolation-time-wrapper">
         <div
-          v-if="props.diseaseSheet.isolation.isolationTime != 0"
+          v-if="diseaseSheet.isolation.isolationTime != 0"
           class="badge badge-primary badge-outline"
         >
-          {{ props.diseaseSheet.isolation.isolationTime }}
+          {{ diseaseSheet.isolation.isolationTime }}
         </div>
         <div class="badge badge-primary">
-          {{ props.diseaseSheet.isolation.isolationPeriod }}
+          {{ diseaseSheet.isolation.isolationPeriod }}
         </div>
       </div>
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.isolation.info"
+          v-for="(item, key) in diseaseSheet.isolation.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -177,7 +188,7 @@ const props = defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in props.diseaseSheet.isolation.files"
+          v-for="(item, key) in diseaseSheet.isolation.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -202,7 +213,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-boolean-wrapper">
         <div
-          v-if="props.diseaseSheet.mandatoryNotification.notify"
+          v-if="diseaseSheet.mandatoryNotification.notify"
           class="disease-datasheet-boolean-icon-wrapper"
         >
           <label for="mandatory-notification-ok-icon">SI</label>
@@ -225,7 +236,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.mandatoryNotification.info"
+          v-for="(item, key) in diseaseSheet.mandatoryNotification.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -233,7 +244,7 @@ const props = defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in props.diseaseSheet.mandatoryNotification.files"
+          v-for="(item, key) in diseaseSheet.mandatoryNotification.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -258,7 +269,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-boolean-wrapper">
         <div
-          v-if="props.diseaseSheet.roomSharing.shareable"
+          v-if="diseaseSheet.roomSharing.shareable"
           class="disease-datasheet-boolean-icon-wrapper"
         >
           <label for="sharing-ok-icon">SI</label>
@@ -281,7 +292,7 @@ const props = defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in props.diseaseSheet.roomSharing.info"
+          v-for="(item, key) in diseaseSheet.roomSharing.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -289,7 +300,7 @@ const props = defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in props.diseaseSheet.roomSharing.files"
+          v-for="(item, key) in diseaseSheet.roomSharing.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
