@@ -4,11 +4,11 @@
 import { arrayOfSheets } from '../services/diseaseDatasheetService';
 
 // types
-import DiseaseDatasheet from '../types/DiseaseDatasheet';
+import type DiseaseDatasheet from '../types/DiseaseDatasheet';
 
 // components
 import DiseaseDatasheetComponent from '../components/DiseaseDatasheetComponent.vue';
-import BottomNav from '../components/BottomNav.vue';
+// import BottomNav from '../components/BottomNav.vue';
 import DiseaseSearchInput from '../components/DiseaseSearchInput.vue';
 // import DarkLightButton from '../components/DarkLightButton.vue';
 
@@ -28,7 +28,7 @@ const diseaseSelectedObject = ref<DiseaseDatasheet | null>(null);
     />
 
     <DiseaseDatasheetComponent :disease-sheet="diseaseSelectedObject" />
-
+    <!-- TODO - Remove clutter from this page -->
     <!-- <bottom-nav /> -->
   </div>
 </template>
