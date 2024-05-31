@@ -1,6 +1,6 @@
 import type DiseaseDatasheet from "../types/DiseaseDatasheet";
 
-let arrayOfSheets : DiseaseDatasheet[] = [
+const arrayOfSheets : DiseaseDatasheet[] = [
   {
     name: "COVID-19",
     type: "Virus",
@@ -30,7 +30,8 @@ let arrayOfSheets : DiseaseDatasheet[] = [
       info: ["Info 1"],
       files: ["File 1"]
     },
-    warnings: ["COVID-19 is highly contagious", "COVID-19 can be deadly"]
+    warnings: ["COVID-19 is highly contagious", "COVID-19 can be deadly"],
+    info: ["Info COVID-19"]
   },
   {
     name: "Influenza",
@@ -61,7 +62,8 @@ let arrayOfSheets : DiseaseDatasheet[] = [
       info: [],
       files: ["File 1"]
     },
-    warnings: []
+    warnings: [],
+    info: ["Info Influenza"]
   },
   {
     name: "Salmonella",
@@ -92,7 +94,8 @@ let arrayOfSheets : DiseaseDatasheet[] = [
       info: [],
       files: ["File 1"]
     },
-    warnings: []
+    warnings: [],
+    info: ["Info Salmonella"]
   },
   {
     name: "Tuberculosis",
@@ -123,7 +126,8 @@ let arrayOfSheets : DiseaseDatasheet[] = [
       info: ["Info 1"],
       files: ["File 1"]
     },
-    warnings: ["Tuberculosis is highly contagious"]
+    warnings: ["Tuberculosis is highly contagious"],
+    info: ["Info Tuberculosis"]
   },
   {
     name: "Staphylococcus",
@@ -154,7 +158,8 @@ let arrayOfSheets : DiseaseDatasheet[] = [
       info: [],
       files: []
     },
-    warnings: []
+    warnings: [],
+    info: ["Info Staphylococcus"]
   },
   {
     name: "Hepatitis A",
@@ -185,7 +190,8 @@ let arrayOfSheets : DiseaseDatasheet[] = [
       info: ["Info 1"],
       files: ["File 1"]
     },
-    warnings: []
+    warnings: [],
+    info: []
   },
 ];
 

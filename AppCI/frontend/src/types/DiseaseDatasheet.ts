@@ -2,30 +2,31 @@ export default interface DiseaseDatasheet {
   name: string;
   type: string;
   cautions: {
-    list: String[];
-    info: String[];
-    files: String[];
+    list: string[];
+    info: string[];
+    files: string[];
   };
   cleaning: {
-    list: String[];
-    info: String[];
-    files: String[];
+    list: string[];
+    info: string[];
+    files: string[];
   };
   isolation: {
-    isolationTime: Number;
-    isolationPeriod: String;
-    info: String[];
-    files: String[];
+    isolationTime: number;
+    isolationPeriod: string;
+    info: string[];
+    files: string[];
   };
   mandatoryNotification: {
-    notify: Boolean;
-    info: String[];
-    files: String[];
+    notify: boolean;
+    info: string[];
+    files: string[];
   };
   roomSharing: {
-    shareable: Boolean;
-    info: String[];
-    files: String[];
+    shareable: boolean;
+    info: string[];
+    files: string[];
   };
-  warnings: String[];
+  warnings: string[];
+  info: string[];
 };
