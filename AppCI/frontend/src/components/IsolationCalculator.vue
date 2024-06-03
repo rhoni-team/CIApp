@@ -64,7 +64,7 @@ watchEffect(async () => {
     <br>
     <label for="isolation-end-date">Fin del aislamiento</label>
     <p
-      v-if="isolationEndDate !== 'Invalid Date' && isolationTimeUnit !== undefined"
+      v-if="isolationEndDate !== 'Invalid Date' && isolationTimeUnit !== undefined && isolationTime !== 0"  
       id="isolation-end-date" 
       class="text-secondary font-bold text-3xl"
     >
