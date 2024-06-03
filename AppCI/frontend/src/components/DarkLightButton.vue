@@ -35,6 +35,6 @@
         />
       </svg>
 
-    </label> <!-- -->
+    </label>
   </div>
 </template>

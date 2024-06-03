@@ -25,5 +25,3 @@ const diseaseSelectedObject = ref<DiseaseDatasheet | null>(null);
     <disease-datasheet-component :disease-sheet="diseaseSelectedObject" />
   </div>
 </template>
-
-<style scoped></style>
