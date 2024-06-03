@@ -8,6 +8,11 @@ const routes = [
     component: HomeView,
     // component: () => import("@/views/HomeView.vue"),
   },
+  {
+    path: "/calculator",
+    name: "IsolationCalculator",
+    component: () => import("@/views/CalculatorView.vue"),
+  },
 ];
 
 const router = createRouter({
