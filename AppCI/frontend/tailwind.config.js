@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-// import colors from 'tailwindcss/colors';
+// import colors from 'daisyui/src/theming/themes';
+import colors from 'tailwindcss/colors';
 // const colors = require("tailwindcss/colors");
 
 export default {
@@ -13,10 +14,10 @@ export default {
       backgroundImage: {
         // "texture-pattern": "url('@/assets/img/texture.svg')",
       },
-      // colors: {
-      //   "vtd-primary": colors.sky, // Light mode Datepicker color
-      //   "vtd-secondary": colors.gray, // Dark mode Datepicker color
-      // },
+      colors: {
+        "vtd-primary": colors.sky, // Light mode Datepicker color
+        "vtd-secondary": colors.cyan, // Dark mode Datepicker color
+      },
     },
   },
   plugins: [

@@ -127,6 +127,13 @@
   align-content: center;
 }
 
+/* Calculator Component*/
+.isolation-calculator-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 /* CSS Animations */
 .blink { 
   animation: animate 1s infinite; 
