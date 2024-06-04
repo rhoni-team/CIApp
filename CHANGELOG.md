@@ -2,6 +2,121 @@
 
 
 
+## v0.3.0 (2024-06-04)
+
+### Build
+
+* build: add pandas library ([`fcb7284`](https://github.com/rhoni-team/AppCI/commit/fcb728426bc25b28a7eb6d8cf8ff8bb814d2a6f7))
+
+* build: install clean text rhoni package ([`3448e95`](https://github.com/rhoni-team/AppCI/commit/3448e95a5752aec8c451951ba4173d8ddb51b503))
+
+### Chore
+
+* chore: lint and autopep ([`398d495`](https://github.com/rhoni-team/AppCI/commit/398d49548a04c30a6e51eae2d1eb5f4aa7794e35))
+
+* chore: remove prints ([`55e23c3`](https://github.com/rhoni-team/AppCI/commit/55e23c37fd5692596262cbcb3868b64100758383))
+
+* chore: add init file to test ([`bd95cd4`](https://github.com/rhoni-team/AppCI/commit/bd95cd4eac62f88766bc9f0ba1444dbf5a5bd0a5))
+
+* chore: add difteria data to special cases ([`d93d1ec`](https://github.com/rhoni-team/AppCI/commit/d93d1eccb6be7dd5caadee744497c339ba528b18))
+
+* chore: replace csv with new data ([`8cb96fa`](https://github.com/rhoni-team/AppCI/commit/8cb96fadd9ddf31ec865df844207b93941df8f19))
+
+* chore: remove isolation time migration ([`14d1f91`](https://github.com/rhoni-team/AppCI/commit/14d1f91f9c8ae0dee84625c753ad65c6d8328f3f))
+
+* chore: remove example test ([`3cc8889`](https://github.com/rhoni-team/AppCI/commit/3cc888955fc69bf7e1b45c4a100d0bb14f33e3eb))
+
+* chore: add test csv file to run tests ([`2c0dc20`](https://github.com/rhoni-team/AppCI/commit/2c0dc204cebf88fb973511ecda5e31884a5cbfe0))
+
+* chore: add new data in migrations ([`bbfac0d`](https://github.com/rhoni-team/AppCI/commit/bbfac0da65dd5cd02466e1e2c54e4bcde36ec995))
+
+* chore: add special cases isolation time data ([`27c3cd1`](https://github.com/rhoni-team/AppCI/commit/27c3cd1fac34fdf46f3829f5ec2b8fad23804f8a))
+
+* chore: add disease data in csv format ([`5b1ae77`](https://github.com/rhoni-team/AppCI/commit/5b1ae774c876968b207d2907493b494ac9f54666))
+
+* chore: add disease type data in migration ([`351223c`](https://github.com/rhoni-team/AppCI/commit/351223cfd2b2deae905bbc71c84a92a883501e62))
+
+* chore: add isolation warnings migration ([`a844b41`](https://github.com/rhoni-team/AppCI/commit/a844b41f346517b01ea0e6e8fdacf5a9c9de7757))
+
+* chore: add time related migrations ([`22966d6`](https://github.com/rhoni-team/AppCI/commit/22966d62ec6e6b888b92ee29ce7f0531b823d668))
+
+* chore: add cleaning type data in migration ([`72068bf`](https://github.com/rhoni-team/AppCI/commit/72068bf2a22833c19e11b6c5e5ca7b67d6ef213e))
+
+* chore: add isolation types data in migration ([`45f3e15`](https://github.com/rhoni-team/AppCI/commit/45f3e157152037f7d263008f7a6073da6fc1fb91))
+
+* chore: add unaccent postgres extension ([`402531e`](https://github.com/rhoni-team/AppCI/commit/402531ee286a30fdef603dd2f8adfbd4b4b31283))
+
+### Feature
+
+* feat: add observation qx data to disease instance ([`2edb7aa`](https://github.com/rhoni-team/AppCI/commit/2edb7aa478db4b8daa0a0d26e0e0125106d2d6b6))
+
+* feat: add qx observation field to disease model ([`4642252`](https://github.com/rhoni-team/AppCI/commit/464225263d73da1c59d37375cdc72cdc76a165f4))
+
+* feat: add si no boolean fields to disease instance ([`b25850f`](https://github.com/rhoni-team/AppCI/commit/b25850f8596f230ba79906ae737153327c9b276a))
+
+* feat: add with atb and other isolation fx ([`5691b17`](https://github.com/rhoni-team/AppCI/commit/5691b1758e89232fc3923e0ac9a9e0ee59bc9fa7))
+
+* feat: improve and clean migration file ([`e73cc5c`](https://github.com/rhoni-team/AppCI/commit/e73cc5cf712d302163b9ed73abf30e3147fe0f05))
+
+* feat: class to add data to disease dictionary instance ([`c85e46a`](https://github.com/rhoni-team/AppCI/commit/c85e46ad1eec704c7bfaf43817ae71b04c2cdf56))
+
+* feat: class to load csv data as pd df ([`530baae`](https://github.com/rhoni-team/AppCI/commit/530baae5b16a36b4b8f44699aa2e7aba2679f73b))
+
+* feat: add auxiliary data and fx to clean column names ([`4a57273`](https://github.com/rhoni-team/AppCI/commit/4a572736f341e7e03f5c002525a10db70f4858ce))
+
+* feat: add disease model ([`f914fa4`](https://github.com/rhoni-team/AppCI/commit/f914fa4544d124484a58845e7683869869683783))
+
+* feat: add disease type model ([`9d78bb9`](https://github.com/rhoni-team/AppCI/commit/9d78bb98d2d4357314e17ff44d718a22f9d8e0a2))
+
+* feat: add time and warning models ([`4461cf7`](https://github.com/rhoni-team/AppCI/commit/4461cf7b4e51938eb6a4f7783324dd92b1734b88))
+
+* feat: add cleaning type model ([`aa3287a`](https://github.com/rhoni-team/AppCI/commit/aa3287a277200bca5fe671bb37d2adb77e32c955))
+
+* feat: add commands for recreate db and new migration file ([`f75df19`](https://github.com/rhoni-team/AppCI/commit/f75df19ed207634850ca8ca0c7725c8e1a1cd611))
+
+* feat: starting initial migration ([`87dfd94`](https://github.com/rhoni-team/AppCI/commit/87dfd94c36f48417d2ba961c1b2886ee8fd7276c))
+
+* feat: create isolation type model ([`ae559dd`](https://github.com/rhoni-team/AppCI/commit/ae559ddc50373d1a5e6dba9a7fdf5e08c479387c))
+
+### Fix
+
+* fix: remove null from many to many field ([`7ba8f3d`](https://github.com/rhoni-team/AppCI/commit/7ba8f3db6071f5233ff54c161372787d4131f110))
+
+* fix: typo in column names ([`d8d4b12`](https://github.com/rhoni-team/AppCI/commit/d8d4b12422f20f724ed363b7dc53483322a3870b))
+
+* fix: typo in declaracion obligatoria ([`52d8e92`](https://github.com/rhoni-team/AppCI/commit/52d8e92cf5c6e26d951bdac4051914012a030d4f))
+
+* fix: mandatory declaration field name ([`5d0f89c`](https://github.com/rhoni-team/AppCI/commit/5d0f89cec5796701e246712bb6f1d8a03ccf47c5))
+
+* fix: fk to special cases of isolation time ([`0b629aa`](https://github.com/rhoni-team/AppCI/commit/0b629aab8188af305656e98b67f40d1831389da6))
+
+* fix: remove isolation time nan values ([`b4f3406`](https://github.com/rhoni-team/AppCI/commit/b4f34066cf88f6d3c0c66a0ba981b55bfa2a02b2))
+
+* fix: cleaning type labels ([`214bf12`](https://github.com/rhoni-team/AppCI/commit/214bf12ba16b63be47c9066474d6602b44840e4b))
+
+* fix: change to precautions type in migrations ([`b830043`](https://github.com/rhoni-team/AppCI/commit/b830043020d47c553fb87a64e13b83729bd2e077))
+
+* fix: change isolation type model by precaution type model ([`531c749`](https://github.com/rhoni-team/AppCI/commit/531c7493473017a0339b8b0ef886a8bffac54daa))
+
+* fix: add room sharing field to disease model ([`b794c81`](https://github.com/rhoni-team/AppCI/commit/b794c8124ad45e9b461cf81a1c18d6d6fb958305))
+
+* fix: isolation type fields ([`ae52263`](https://github.com/rhoni-team/AppCI/commit/ae522633f5779260703aa1011d24143da1052892))
+
+### Test
+
+* test: add test for adding related instances to disease ([`992ec3b`](https://github.com/rhoni-team/AppCI/commit/992ec3b0e47d36d78bdd7e8ed0ff3075691f4b2a))
+
+* test: add test to add disease data ([`1548856`](https://github.com/rhoni-team/AppCI/commit/154885617e5c2075b36d3ff3255b47b1c15cf3b2))
+
+* test: add test to load csv data as df and create new columns ([`453eb70`](https://github.com/rhoni-team/AppCI/commit/453eb708f86eb9bb70af2a27b94d77a8a9984e5d))
+
+### Unknown
+
+* Merge pull request #40 from rhoni-team/27.fill_database_and_create_models
+
+27.fill database and create models ([`16b8506`](https://github.com/rhoni-team/AppCI/commit/16b8506bc1a5175d5dade45ffa868af5174c3d2b))
+
+
 ## v0.2.0 (2024-05-21)
 
 ### Chore
