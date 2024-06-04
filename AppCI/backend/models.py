@@ -47,7 +47,7 @@ class Disease(models.Model):
     label = models.CharField(max_length=100, null=True, blank=True)
     disease_type = models.ForeignKey(DiseaseType, models.SET_NULL, blank=True, null=True)
     precaution_type = models.ForeignKey(PrecautionType, models.SET_NULL, blank=True, null=True)
-    cleaning_type = models.ManyToManyField(CleaningType, blank=True, null=True, related_name='diseases')
+    cleaning_type = models.ManyToManyField(CleaningType, blank=True, related_name='diseases')
     isolation_time = models.IntegerField(blank=True, null=True)
     isolation_unit = models.ForeignKey("UnitsOfTime", models.SET_NULL, blank=True, null=True)
     with_atb = models.BooleanField(blank=True, null=True)
