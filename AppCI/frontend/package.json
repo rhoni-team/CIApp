@@ -14,24 +14,31 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "axios": "^1.7.2",
+    "dayjs": "^1.11.11",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "vue-tailwind-datepicker": "^1.7.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.2.0",
+    "@eslint/js": "^9.3.0",
+    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
+    "@types/eslint__js": "^8.42.3",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/test-utils": "^2.4.5",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.11.1",
-    "eslint": "^9.2.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.25.0",
     "globals": "^15.1.0",
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0",
     "vite": "^5.2.0",
     "vitest": "^1.5.3",
+    "vue-tsc": "^2.0.19",
     "webpack-bundle-tracker": "^3.1.0"
   }
 }
