@@ -1,7 +1,15 @@
 <script setup>
+import { ref } from "vue";
 import monet from "@/assets/img/MonetImpressionSunrise.jpg";
 import tenom from "@/assets/img/MonetImpressionSunriseInverted.jpg";
-import { getDiseasesList } from '@/apiConnections/diseases.js'
+import { getDiseasesList, getDetailedDisease } from '@/apiConnections/diseases.js'
+
+let disease_id = ref(null);
+
+function get_one_disease_by_id() {
+  console.log("disease id", disease_id.value);
+  getDetailedDisease(disease_id.value);
+}
 </script>
 
 <template>
@@ -43,14 +51,17 @@ import { getDiseasesList } from '@/apiConnections/diseases.js'
       <h1>AppCI</h1>
       <h2>Hola Rhonies!</h2>
       <h3>Esta es la app de Maby</h3>
-      <button @click="getDiseasesList">get_diseases</button>
     </article>
+    <form class="max-w-sm mx-auto">
+        <label for="number-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a disease id:</label>
+        <input type="number" v-model="disease_id" id="number-input" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="90210" required />
+    </form>
     <div class="flex p-4 gap-2">
-      <button class="btn btn-primary">
-        Primary
+      <button @click="getDiseasesList" class="btn btn-primary">
+        GET DISEASES LIST
       </button>
-      <button class="btn btn-secondary">
-        Secondary
+      <button @click="get_one_disease_by_id()" class="btn btn-secondary">
+        GET ONE DISEASE BY ID
       </button>
       <button class="btn btn-accent">
         Accent
