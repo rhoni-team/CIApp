@@ -1,6 +1,7 @@
 <script setup>
 import monet from "@/assets/img/MonetImpressionSunrise.jpg";
 import tenom from "@/assets/img/MonetImpressionSunriseInverted.jpg";
+import { getDiseasesList } from '@/apiConnections/diseases.js'
 </script>
 
 <template>
@@ -42,6 +43,7 @@ import tenom from "@/assets/img/MonetImpressionSunriseInverted.jpg";
       <h1>AppCI</h1>
       <h2>Hola Rhonies!</h2>
       <h3>Esta es la app de Maby</h3>
+      <button @click="getDiseasesList">get_diseases</button>
     </article>
     <div class="flex p-4 gap-2">
       <button class="btn btn-primary">
