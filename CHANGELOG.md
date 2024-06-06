@@ -2,6 +2,263 @@
 
 
 
+## v0.4.0 (2024-06-06)
+
+### Chore
+
+* chore: Add icons to the top navbar component ([`db3d905`](https://github.com/rhoni-team/AppCI/commit/db3d9056ff0a955e8f71540cf3824b96a0c58dc1))
+
+* chore: Delete unused files from assets ([`3047b3c`](https://github.com/rhoni-team/AppCI/commit/3047b3cc474faa4f979a8da3a2da0cc82685a451))
+
+* chore: Add icons for the dark-light button component ([`cf02805`](https://github.com/rhoni-team/AppCI/commit/cf02805cef199b42414cf5166bf5e05f355f5b9f))
+
+### Refactor
+
+* refactor: Make changes to match the linter requirements ([`d00c413`](https://github.com/rhoni-team/AppCI/commit/d00c413b70c3fdcd768b2897bef7fcc4e0b9c49c))
+
+### Unknown
+
+* Merge pull request #42 from rhoni-team/34-disease-datasheet
+
+34 disease datasheet ([`dfa906b`](https://github.com/rhoni-team/AppCI/commit/dfa906bb501fd51cb51cc80ecdb56a4b93ca725e))
+
+* improve: Change the data use logic to matching the &#39;Data Provider Pattern&#39; ([`d5663fa`](https://github.com/rhoni-team/AppCI/commit/d5663fabf56098f1e3e589b2d769eb8cfc772021))
+
+
+## v0.3.0 (2024-06-04)
+
+### Build
+
+* build: add pandas library ([`fcb7284`](https://github.com/rhoni-team/AppCI/commit/fcb728426bc25b28a7eb6d8cf8ff8bb814d2a6f7))
+
+* build: Change the reference to main.js to main.ts ([`ad2b2ef`](https://github.com/rhoni-team/AppCI/commit/ad2b2ef2ce28a65ae2db12dc2bfbf62086a843df))
+
+* build: install clean text rhoni package ([`3448e95`](https://github.com/rhoni-team/AppCI/commit/3448e95a5752aec8c451951ba4173d8ddb51b503))
+
+### Chore
+
+* chore: Integrate the new components to de App and HomeView components ([`99fdf58`](https://github.com/rhoni-team/AppCI/commit/99fdf5866ef768a00a63b039e4f81749081c2a3f))
+
+* chore: Add a mocked disease finder component ([`a4ec83d`](https://github.com/rhoni-team/AppCI/commit/a4ec83dd2586150175096170a5f4c562e185e5ca))
+
+* chore: lint and autopep ([`398d495`](https://github.com/rhoni-team/AppCI/commit/398d49548a04c30a6e51eae2d1eb5f4aa7794e35))
+
+* chore: remove prints ([`55e23c3`](https://github.com/rhoni-team/AppCI/commit/55e23c37fd5692596262cbcb3868b64100758383))
+
+* chore: add init file to test ([`bd95cd4`](https://github.com/rhoni-team/AppCI/commit/bd95cd4eac62f88766bc9f0ba1444dbf5a5bd0a5))
+
+* chore: Move the bottom navbar component from Homeview to main app.vue ([`943c185`](https://github.com/rhoni-team/AppCI/commit/943c18563e39112316866b43c7b630e3f4d11668))
+
+* chore: add difteria data to special cases ([`d93d1ec`](https://github.com/rhoni-team/AppCI/commit/d93d1eccb6be7dd5caadee744497c339ba528b18))
+
+* chore: replace csv with new data ([`8cb96fa`](https://github.com/rhoni-team/AppCI/commit/8cb96fadd9ddf31ec865df844207b93941df8f19))
+
+* chore: remove isolation time migration ([`14d1f91`](https://github.com/rhoni-team/AppCI/commit/14d1f91f9c8ae0dee84625c753ad65c6d8328f3f))
+
+* chore: remove example test ([`3cc8889`](https://github.com/rhoni-team/AppCI/commit/3cc888955fc69bf7e1b45c4a100d0bb14f33e3eb))
+
+* chore: add test csv file to run tests ([`2c0dc20`](https://github.com/rhoni-team/AppCI/commit/2c0dc204cebf88fb973511ecda5e31884a5cbfe0))
+
+* chore: add new data in migrations ([`bbfac0d`](https://github.com/rhoni-team/AppCI/commit/bbfac0da65dd5cd02466e1e2c54e4bcde36ec995))
+
+* chore: add special cases isolation time data ([`27c3cd1`](https://github.com/rhoni-team/AppCI/commit/27c3cd1fac34fdf46f3829f5ec2b8fad23804f8a))
+
+* chore: Add icons to assets ([`272cd41`](https://github.com/rhoni-team/AppCI/commit/272cd413695cf9f7ac7c84290355b778dfbd0f27))
+
+* chore: Add styles and svg to assets ([`ebe3ee6`](https://github.com/rhoni-team/AppCI/commit/ebe3ee6a67a8415210dd8446e16f4b35845e731e))
+
+* chore: Add types for disease datasheet ([`3966411`](https://github.com/rhoni-team/AppCI/commit/39664114631e3652be69a0b4615099022817f0ac))
+
+* chore: Make some changes for typescript implementation ([`7af5553`](https://github.com/rhoni-team/AppCI/commit/7af555384f5ddfc48e207f1721c0c58a90c82de0))
+
+* chore: Remove clutter ([`7331571`](https://github.com/rhoni-team/AppCI/commit/7331571ef1bc3cdd43f5dba3b841aa6b515e3803))
+
+* chore: add disease data in csv format ([`5b1ae77`](https://github.com/rhoni-team/AppCI/commit/5b1ae774c876968b207d2907493b494ac9f54666))
+
+* chore: add disease type data in migration ([`351223c`](https://github.com/rhoni-team/AppCI/commit/351223cfd2b2deae905bbc71c84a92a883501e62))
+
+* chore: add isolation warnings migration ([`a844b41`](https://github.com/rhoni-team/AppCI/commit/a844b41f346517b01ea0e6e8fdacf5a9c9de7757))
+
+* chore: add time related migrations ([`22966d6`](https://github.com/rhoni-team/AppCI/commit/22966d62ec6e6b888b92ee29ce7f0531b823d668))
+
+* chore: add cleaning type data in migration ([`72068bf`](https://github.com/rhoni-team/AppCI/commit/72068bf2a22833c19e11b6c5e5ca7b67d6ef213e))
+
+* chore: add isolation types data in migration ([`45f3e15`](https://github.com/rhoni-team/AppCI/commit/45f3e157152037f7d263008f7a6073da6fc1fb91))
+
+* chore: add unaccent postgres extension ([`402531e`](https://github.com/rhoni-team/AppCI/commit/402531ee286a30fdef603dd2f8adfbd4b4b31283))
+
+### Feature
+
+* feat: Add a top navbar menu component ([`73da520`](https://github.com/rhoni-team/AppCI/commit/73da520064c367b3b9585b6f7b1e59294d0fbe8e))
+
+* feat: Add a sidebar menu component ([`817fc19`](https://github.com/rhoni-team/AppCI/commit/817fc190771ed755c76fdfde997038f7210dc0fd))
+
+* feat: Create a disease search selector input ([`2547851`](https://github.com/rhoni-team/AppCI/commit/2547851d135c66dec36770bfa7f794eebb71a124))
+
+* feat: add observation qx data to disease instance ([`2edb7aa`](https://github.com/rhoni-team/AppCI/commit/2edb7aa478db4b8daa0a0d26e0e0125106d2d6b6))
+
+* feat: add qx observation field to disease model ([`4642252`](https://github.com/rhoni-team/AppCI/commit/464225263d73da1c59d37375cdc72cdc76a165f4))
+
+* feat: add si no boolean fields to disease instance ([`b25850f`](https://github.com/rhoni-team/AppCI/commit/b25850f8596f230ba79906ae737153327c9b276a))
+
+* feat: Add a dark-light mode button ([`54aa232`](https://github.com/rhoni-team/AppCI/commit/54aa232435bb25477c86b9429b1c910850f1f959))
+
+* feat: Add the disease datasheet component ([`97f682d`](https://github.com/rhoni-team/AppCI/commit/97f682db5078c8aecac4f2a3e342ea872357464b))
+
+* feat: Add a bottom navbar ([`e9dbdfa`](https://github.com/rhoni-team/AppCI/commit/e9dbdfa4f74f0feae44ddcb017e9c66fb8481ca8))
+
+* feat: add with atb and other isolation fx ([`5691b17`](https://github.com/rhoni-team/AppCI/commit/5691b1758e89232fc3923e0ac9a9e0ee59bc9fa7))
+
+* feat: improve and clean migration file ([`e73cc5c`](https://github.com/rhoni-team/AppCI/commit/e73cc5cf712d302163b9ed73abf30e3147fe0f05))
+
+* feat: class to add data to disease dictionary instance ([`c85e46a`](https://github.com/rhoni-team/AppCI/commit/c85e46ad1eec704c7bfaf43817ae71b04c2cdf56))
+
+* feat: class to load csv data as pd df ([`530baae`](https://github.com/rhoni-team/AppCI/commit/530baae5b16a36b4b8f44699aa2e7aba2679f73b))
+
+* feat: add auxiliary data and fx to clean column names ([`4a57273`](https://github.com/rhoni-team/AppCI/commit/4a572736f341e7e03f5c002525a10db70f4858ce))
+
+* feat: Add the diseaseDatasheet component ([`458ddc5`](https://github.com/rhoni-team/AppCI/commit/458ddc5486f5b863ef59e42974ceb92af264e98d))
+
+* feat: add disease model ([`f914fa4`](https://github.com/rhoni-team/AppCI/commit/f914fa4544d124484a58845e7683869869683783))
+
+* feat: add disease type model ([`9d78bb9`](https://github.com/rhoni-team/AppCI/commit/9d78bb98d2d4357314e17ff44d718a22f9d8e0a2))
+
+* feat: add time and warning models ([`4461cf7`](https://github.com/rhoni-team/AppCI/commit/4461cf7b4e51938eb6a4f7783324dd92b1734b88))
+
+* feat: add cleaning type model ([`aa3287a`](https://github.com/rhoni-team/AppCI/commit/aa3287a277200bca5fe671bb37d2adb77e32c955))
+
+* feat: add commands for recreate db and new migration file ([`f75df19`](https://github.com/rhoni-team/AppCI/commit/f75df19ed207634850ca8ca0c7725c8e1a1cd611))
+
+* feat: starting initial migration ([`87dfd94`](https://github.com/rhoni-team/AppCI/commit/87dfd94c36f48417d2ba961c1b2886ee8fd7276c))
+
+* feat: create isolation type model ([`ae559dd`](https://github.com/rhoni-team/AppCI/commit/ae559ddc50373d1a5e6dba9a7fdf5e08c479387c))
+
+### Fix
+
+* fix: remove null from many to many field ([`7ba8f3d`](https://github.com/rhoni-team/AppCI/commit/7ba8f3db6071f5233ff54c161372787d4131f110))
+
+* fix: Add configs to eslint for the TS parser ([`653eb31`](https://github.com/rhoni-team/AppCI/commit/653eb313287cd2ed6b32c16a93742ccba74842a2))
+
+* fix: typo in column names ([`d8d4b12`](https://github.com/rhoni-team/AppCI/commit/d8d4b12422f20f724ed363b7dc53483322a3870b))
+
+* fix: typo in declaracion obligatoria ([`52d8e92`](https://github.com/rhoni-team/AppCI/commit/52d8e92cf5c6e26d951bdac4051914012a030d4f))
+
+* fix: mandatory declaration field name ([`5d0f89c`](https://github.com/rhoni-team/AppCI/commit/5d0f89cec5796701e246712bb6f1d8a03ccf47c5))
+
+* fix: fk to special cases of isolation time ([`0b629aa`](https://github.com/rhoni-team/AppCI/commit/0b629aab8188af305656e98b67f40d1831389da6))
+
+* fix: remove isolation time nan values ([`b4f3406`](https://github.com/rhoni-team/AppCI/commit/b4f34066cf88f6d3c0c66a0ba981b55bfa2a02b2))
+
+* fix: cleaning type labels ([`214bf12`](https://github.com/rhoni-team/AppCI/commit/214bf12ba16b63be47c9066474d6602b44840e4b))
+
+* fix: change to precautions type in migrations ([`b830043`](https://github.com/rhoni-team/AppCI/commit/b830043020d47c553fb87a64e13b83729bd2e077))
+
+* fix: change isolation type model by precaution type model ([`531c749`](https://github.com/rhoni-team/AppCI/commit/531c7493473017a0339b8b0ef886a8bffac54daa))
+
+* fix: Add compiler options to tsconfig ([`5d27744`](https://github.com/rhoni-team/AppCI/commit/5d277444fe8a0ab5bf4bd14160bc2231f76eac1f))
+
+* fix: add room sharing field to disease model ([`b794c81`](https://github.com/rhoni-team/AppCI/commit/b794c8124ad45e9b461cf81a1c18d6d6fb958305))
+
+* fix: isolation type fields ([`ae52263`](https://github.com/rhoni-team/AppCI/commit/ae522633f5779260703aa1011d24143da1052892))
+
+### Refactor
+
+* refactor: Change the defineProps definition for the DiseaseDatasheetComponent ([`9fd39a0`](https://github.com/rhoni-team/AppCI/commit/9fd39a0df67df247dfb9adf23d441a525c17c3e0))
+
+* refactor: Changes to match eslint requirements ([`c1e666f`](https://github.com/rhoni-team/AppCI/commit/c1e666f032ad1765b8ebfd97a5e7067831423d4f))
+
+### Style
+
+* style: Add style class for main app ([`2507caa`](https://github.com/rhoni-team/AppCI/commit/2507caaa233046b27ccf0f68e293ee1c4fe8380a))
+
+### Test
+
+* test: Add tests to assert the correctly loading for HomeView ([`07677b1`](https://github.com/rhoni-team/AppCI/commit/07677b11596ef811c56fc7e45106b4f297447079))
+
+* test: add test for adding related instances to disease ([`992ec3b`](https://github.com/rhoni-team/AppCI/commit/992ec3b0e47d36d78bdd7e8ed0ff3075691f4b2a))
+
+* test: add test to add disease data ([`1548856`](https://github.com/rhoni-team/AppCI/commit/154885617e5c2075b36d3ff3255b47b1c15cf3b2))
+
+* test: add test to load csv data as df and create new columns ([`453eb70`](https://github.com/rhoni-team/AppCI/commit/453eb708f86eb9bb70af2a27b94d77a8a9984e5d))
+
+* test: Change the dummy test to pass ([`a2a2918`](https://github.com/rhoni-team/AppCI/commit/a2a2918637cb9d8699db970a63838a84b5e30c66))
+
+### Unknown
+
+* Merge pull request #40 from rhoni-team/27.fill_database_and_create_models
+
+27.fill database and create models ([`16b8506`](https://github.com/rhoni-team/AppCI/commit/16b8506bc1a5175d5dade45ffa868af5174c3d2b))
+
+* improvement: Update the interface for diseaseDatasheet ([`5a977ed`](https://github.com/rhoni-team/AppCI/commit/5a977ed121e2c4d8451f56099361b02ce6dc648d))
+
+* improvement: Create separate icons for the bottom navbar ([`e14cd4c`](https://github.com/rhoni-team/AppCI/commit/e14cd4cc7ca2cf6a056dab6e36845059e8ba6041))
+
+* improve: Add the disease sheet component ([`2536048`](https://github.com/rhoni-team/AppCI/commit/253604843662660f372994c5e556424147bdcaa3))
+
+* improve: Add typescript ([`2c7202f`](https://github.com/rhoni-team/AppCI/commit/2c7202fb6d7ed224167a6add2fe30f02ad48d409))
+
+
+## v0.2.0 (2024-05-21)
+
+### Chore
+
+* chore: Some minor changes to the main view to test the UI styles ([`d3995da`](https://github.com/rhoni-team/AppCI/commit/d3995dad17410a85b1c76da08d3f5a18e13fa24a))
+
+* chore: Add another monet painting to use the slider ([`bf2078f`](https://github.com/rhoni-team/AppCI/commit/bf2078f39049efd565695ab24b57908cf28e9b1c))
+
+* chore: Add Tailwindcss Typography ([`937415c`](https://github.com/rhoni-team/AppCI/commit/937415cfbe9006b5a6a5354fba8e6be39fc6419f))
+
+* chore: Remove the greetings message from django template ([`8309c72`](https://github.com/rhoni-team/AppCI/commit/8309c72f6e632870b65a5f7c8b5e273e82c3e7c2))
+
+* chore: Add the static build folder to the linter&#39;s ignoring files configuration ([`f84ea9e`](https://github.com/rhoni-team/AppCI/commit/f84ea9e19d54903d75ec6b7a7dbf842ee374fab6))
+
+* chore: Add daisyUI ([`d43ff37`](https://github.com/rhoni-team/AppCI/commit/d43ff3787a82f8293b2d9b2b1042f6500e721626))
+
+* chore: Update ci-cd.yml (vitest) ([`142f9fd`](https://github.com/rhoni-team/AppCI/commit/142f9fdcb7123ed56738509a9ea48f0de3d66218))
+
+* chore: Update ci-cd.yml (Vitest) ([`cb7d9b8`](https://github.com/rhoni-team/AppCI/commit/cb7d9b8e76d9f9f8a14d8bac2f9b5ebb7e154191))
+
+* chore: Update ci-cd.yml (Vitest) ([`c0335d4`](https://github.com/rhoni-team/AppCI/commit/c0335d4c321de081a4605fe9d9d4c32708d2bbb4))
+
+### Feature
+
+* feat: Add a light/dark mode button selector ([`b709835`](https://github.com/rhoni-team/AppCI/commit/b709835167f92bcb0972e4da3a35b9e7b13c6f83))
+
+### Refactor
+
+* refactor: Edit the code to match the linter requirements ([`74b11d3`](https://github.com/rhoni-team/AppCI/commit/74b11d3fab7978d72ad1bd96c251ab0e5f811be4))
+
+### Test
+
+* test: Change the assertion to pass the test ([`7c6a9b1`](https://github.com/rhoni-team/AppCI/commit/7c6a9b185a4e179225c38e0fde83993bb0395344))
+
+### Unknown
+
+* Merge pull request #26 from rhoni-team/set-css-styles
+
+Set css styles ([`c2762bd`](https://github.com/rhoni-team/AppCI/commit/c2762bd8aff6b738a72a034b2e73b092637f693a))
+
+* Update ci-cd.yml: Remove the continue-on-error
+
+They didn&#39;t work as I expected, so I had to remove them again ([`f675de1`](https://github.com/rhoni-team/AppCI/commit/f675de180832a90905b6afff57d07a8b291ed3b1))
+
+* Update ci-cd: Add continue-on-error to the linter and testing steps ([`baf3573`](https://github.com/rhoni-team/AppCI/commit/baf35738ce1b6b6f67b6db56906cf0bf73047028))
+
+* Update ci-cd.yml ([`7e1c4b9`](https://github.com/rhoni-team/AppCI/commit/7e1c4b9871f38ed473e1224efd9b73f7cd41b0db))
+
+* Update ci-cd.yml ([`30b328a`](https://github.com/rhoni-team/AppCI/commit/30b328ab53e4c1f8c83b223e9d0d46d668a659aa))
+
+* Update ci-cd.yml ([`c17d6dd`](https://github.com/rhoni-team/AppCI/commit/c17d6dd752dcc1ac8e95da9b46d6401571db007c))
+
+* Update ci-cd.yml ([`b74fb01`](https://github.com/rhoni-team/AppCI/commit/b74fb015e7076a77567a3427bd48bb445620a03c))
+
+* Update ci-cd.yml ([`3bfc8bb`](https://github.com/rhoni-team/AppCI/commit/3bfc8bba65e2e0a2427ffb6c5a316e2d821aeb39))
+
+* Update: ci-cd.yml ([`ad0a4e7`](https://github.com/rhoni-team/AppCI/commit/ad0a4e7a0e612ec0a87b1dada4f3e91601e8c962))
+
+* Update: Add ESLint step to ci-cd workflow ([`973d16a`](https://github.com/rhoni-team/AppCI/commit/973d16abbeb426fba0e2b79ba5845e04bab40ade))
+
+
 ## v0.1.0 (2024-05-08)
 
 ### Build

@@ -1,23 +1,15 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
-import DiseaseDatasheet from '@/types/DiseaseDatasheet';
+import { ref } from 'vue';
 
 const diseaseSelected = ref<string | null>(null);
-const diseaseSelectedObject = ref<DiseaseDatasheet | null>(null);
 
-const props = defineProps<{
-  arrayOfSheets: DiseaseDatasheet[];
+defineProps<{
+  diseaseList: string[];
 }>();
 
 defineEmits<{
-  '@disease-selected': [disease: DiseaseDatasheet | null]
-  // (e: '@disease-selected', disease: DiseaseDatasheet | null ): void;
+  '@disease-selected': [string | null]
 }>();
-
-watchEffect(async () => {
-  diseaseSelectedObject.value = props.arrayOfSheets.find((disease) => disease.name === diseaseSelected.value) || null;
-});
-
 </script>
 
 <template>
@@ -25,7 +17,7 @@ watchEffect(async () => {
     <select
       v-model="diseaseSelected"
       class="select select-secondary w-full max-w-xs"
-      @change="() => $emit('@disease-selected', diseaseSelectedObject)"
+      @change="() => $emit('@disease-selected', diseaseSelected)"
     >
       <option
         selected
@@ -34,10 +26,10 @@ watchEffect(async () => {
         Selecciona una enfermedad...
       </option>
       <option
-        v-for="(item, key) in arrayOfSheets"
+        v-for="(item, key) in diseaseList"
         :key="key"
       >
-        {{ item.name }}
+        {{ item }}
       </option>
     </select>
   </div>
