@@ -2,6 +2,17 @@
 
 
 
+## v0.5.0 (2024-06-06)
+
+### Unknown
+
+* Merge pull request #43 from rhoni-team/calculator-component
+
+Calculator component ([`89a6d3c`](https://github.com/rhoni-team/AppCI/commit/89a6d3ca4b85e4d0948e20aa5f3913980bba3971))
+
+* Merge branch &#39;main&#39; into calculator-component ([`750ba1f`](https://github.com/rhoni-team/AppCI/commit/750ba1fb1d1d06c80488d9e7d655799dc8028c8b))
+
+
 ## v0.4.0 (2024-06-06)
 
 ### Chore
@@ -29,6 +40,8 @@
 
 ### Build
 
+* build: Add dayjs dependencies ([`1e132f5`](https://github.com/rhoni-team/AppCI/commit/1e132f5653d0baf620aa7e5f0151494cbda75132))
+
 * build: add pandas library ([`fcb7284`](https://github.com/rhoni-team/AppCI/commit/fcb728426bc25b28a7eb6d8cf8ff8bb814d2a6f7))
 
 * build: Change the reference to main.js to main.ts ([`ad2b2ef`](https://github.com/rhoni-team/AppCI/commit/ad2b2ef2ce28a65ae2db12dc2bfbf62086a843df))
@@ -36,6 +49,14 @@
 * build: install clean text rhoni package ([`3448e95`](https://github.com/rhoni-team/AppCI/commit/3448e95a5752aec8c451951ba4173d8ddb51b503))
 
 ### Chore
+
+* chore: Remove clutter ([`b437ce2`](https://github.com/rhoni-team/AppCI/commit/b437ce2c0c2083675080a2cc2105e3577f717d13))
+
+* chore: Add functionality to buttons at the bottom nav ([`f54a5e1`](https://github.com/rhoni-team/AppCI/commit/f54a5e1e20ee0e4539c0e1b664679006a5d44a27))
+
+* chore: Add a view for the isolation calculator ([`4050ad0`](https://github.com/rhoni-team/AppCI/commit/4050ad047df6facff1e17529463fc4ddb8632f25))
+
+* chore: Add necessary dependencies for date picker ([`aaf130c`](https://github.com/rhoni-team/AppCI/commit/aaf130c3bc55765e7cafaa3c0a5924636c1e0482))
 
 * chore: Integrate the new components to de App and HomeView components ([`99fdf58`](https://github.com/rhoni-team/AppCI/commit/99fdf5866ef768a00a63b039e4f81749081c2a3f))
 
@@ -89,6 +110,8 @@
 
 ### Feature
 
+* feat: Add the isolation calculator component ([`9ada26f`](https://github.com/rhoni-team/AppCI/commit/9ada26f9c809e2c7ac7caa588913f9c4d2a6c6cc))
+
 * feat: Add a top navbar menu component ([`73da520`](https://github.com/rhoni-team/AppCI/commit/73da520064c367b3b9585b6f7b1e59294d0fbe8e))
 
 * feat: Add a sidebar menu component ([`817fc19`](https://github.com/rhoni-team/AppCI/commit/817fc190771ed755c76fdfde997038f7210dc0fd))
@@ -137,6 +160,10 @@
 
 * fix: remove null from many to many field ([`7ba8f3d`](https://github.com/rhoni-team/AppCI/commit/7ba8f3db6071f5233ff54c161372787d4131f110))
 
+* fix: Disable calculator output result when isolation time value is zero ([`73bcb0b`](https://github.com/rhoni-team/AppCI/commit/73bcb0b1805c900556f559f98ae94d6d9767d1d6))
+
+* fix: Hide the input checkbox from the dark-light button that appears after the tailwindcss-forms addition ([`a1a1e4c`](https://github.com/rhoni-team/AppCI/commit/a1a1e4c692367c783c6522a8cd2e580c67a4e88b))
+
 * fix: Add configs to eslint for the TS parser ([`653eb31`](https://github.com/rhoni-team/AppCI/commit/653eb313287cd2ed6b32c16a93742ccba74842a2))
 
 * fix: typo in column names ([`d8d4b12`](https://github.com/rhoni-team/AppCI/commit/d8d4b12422f20f724ed363b7dc53483322a3870b))
@@ -168,6 +195,8 @@
 * refactor: Changes to match eslint requirements ([`c1e666f`](https://github.com/rhoni-team/AppCI/commit/c1e666f032ad1765b8ebfd97a5e7067831423d4f))
 
 ### Style
+
+* style: Add styles for the isolation calculator component ([`dbc1810`](https://github.com/rhoni-team/AppCI/commit/dbc181065ad82d9ca46f6f511164149a8bcaf493))
 
 * style: Add style class for main app ([`2507caa`](https://github.com/rhoni-team/AppCI/commit/2507caaa233046b27ccf0f68e293ee1c4fe8380a))
 
