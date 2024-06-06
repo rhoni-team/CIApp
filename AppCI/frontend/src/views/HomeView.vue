@@ -31,5 +31,3 @@ watchEffect(async () => {
     <disease-datasheet-component :disease-sheet="diseaseSelectedObject" />
   </div>
 </template>
-
-<style scoped></style>
