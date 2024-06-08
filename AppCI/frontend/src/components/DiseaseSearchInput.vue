@@ -27,9 +27,10 @@ defineEmits<{
       </option>
       <option
         v-for="(item, key) in diseaseList"
-        :key="key"
+        :key="item.id"
+        :value="item.id"
       >
-        {{ item }}
+        {{ item.label }}
       </option>
     </select>
   </div>
