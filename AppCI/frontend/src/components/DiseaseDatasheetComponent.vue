@@ -20,6 +20,7 @@ defineProps<{
     v-if="diseaseSheet"
     class="disease-datasheet-wrapper"
   >
+  {{ diseaseSheet }}
     <div class="disease-title-wrapper">
       <div class="disease-type-icon-wrapper">
         <bug-icon class="size-6 text-pink-400" />
@@ -28,8 +29,7 @@ defineProps<{
       <h1 class="disease-title">
         {{ diseaseSheet ? diseaseSheet.name : "No se seleccionó" }}
       </h1>
-
-      <div v-if="diseaseSheet.info.length != 0">
+      <div v-if="diseaseSheet.info?.length != 0">
         <div
           v-for="(item, key) in diseaseSheet.info"
           :key="key"
@@ -40,7 +40,7 @@ defineProps<{
         </div>
       </div>
 
-      <div v-if="diseaseSheet.warnings.length != 0">
+      <div v-if="diseaseSheet.warnings?.length">
         <warning-icon
           class="size-8 text-red-500 blink"
           onclick="warning_modal.showModal()"
@@ -73,14 +73,15 @@ defineProps<{
       </div>
 
       <div class="disease-datasheet-icons-wrapper">
-        <div
-          v-for="(item, key) in diseaseSheet.cautions.list"
+        <div v-if="diseaseSheet.cautions?.list != 0">
+        <!-- <div
+          v-for="(item, key) in diseaseSheet.cautions?.list"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
-        >
+        > -->
           <squares-icon
-            :id="`id-${key}`"
+            :id="`id`"
             class="size-14"
           />
         </div>
@@ -88,7 +89,7 @@ defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.cautions.info"
+          v-for="(item, key) in diseaseSheet.cautions?.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -96,7 +97,7 @@ defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in diseaseSheet.cautions.files"
+          v-for="(item, key) in diseaseSheet.cautions?.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -121,7 +122,7 @@ defineProps<{
 
       <div class="disease-datasheet-icons-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.cleaning.list"
+          v-for="(item, key) in diseaseSheet.cleaning?.list"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -135,7 +136,7 @@ defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.cleaning.info"
+          v-for="(item, key) in diseaseSheet.cleaning?.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -143,7 +144,7 @@ defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in diseaseSheet.cleaning.files"
+          v-for="(item, key) in diseaseSheet.cleaning?.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -168,19 +169,20 @@ defineProps<{
 
       <div class="disease-datasheet-isolation-time-wrapper">
         <div
-          v-if="diseaseSheet.isolation.isolationTime != 0"
+          v-if="diseaseSheet.isolation?.isolationTime"
           class="badge badge-primary badge-outline"
         >
-          {{ diseaseSheet.isolation.isolationTime }}
+          {{ diseaseSheet.isolation?.isolationTime }}
         </div>
-        <div class="badge badge-primary">
-          {{ diseaseSheet.isolation.isolationPeriod }}
+        <div v-if="diseaseSheet.isolation?.isolationPeriod"
+            class="badge badge-primary">
+          {{ diseaseSheet.isolation?.isolationPeriod }}
         </div>
       </div>
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.isolation.info"
+          v-for="(item, key) in diseaseSheet.isolation?.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -188,7 +190,7 @@ defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in diseaseSheet.isolation.files"
+          v-for="(item, key) in diseaseSheet.isolation?.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -213,7 +215,7 @@ defineProps<{
 
       <div class="disease-datasheet-boolean-wrapper">
         <div
-          v-if="diseaseSheet.mandatoryNotification.notify"
+          v-if="diseaseSheet.mandatoryNotification?.notify"
           class="disease-datasheet-boolean-icon-wrapper"
         >
           <label for="mandatory-notification-ok-icon">SI</label>
@@ -236,7 +238,7 @@ defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.mandatoryNotification.info"
+          v-for="(item, key) in diseaseSheet.mandatoryNotification?.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -244,7 +246,7 @@ defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in diseaseSheet.mandatoryNotification.files"
+          v-for="(item, key) in diseaseSheet.mandatoryNotification?.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -269,7 +271,7 @@ defineProps<{
 
       <div class="disease-datasheet-boolean-wrapper">
         <div
-          v-if="diseaseSheet.roomSharing.shareable"
+          v-if="diseaseSheet.roomSharing?.shareable"
           class="disease-datasheet-boolean-icon-wrapper"
         >
           <label for="sharing-ok-icon">SI</label>
@@ -292,7 +294,7 @@ defineProps<{
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.roomSharing.info"
+          v-for="(item, key) in diseaseSheet.roomSharing?.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
@@ -300,7 +302,7 @@ defineProps<{
           <info-icon class="size-11 text-orange-400" />
         </div>
         <div
-          v-for="(item, key) in diseaseSheet.roomSharing.files"
+          v-for="(item, key) in diseaseSheet.roomSharing?.files"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
