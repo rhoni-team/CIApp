@@ -14,7 +14,7 @@ class DiseasesListView(APIView):
         instance = Disease.objects.all()
         serializer = DiseasesNamesSerializer(instance, many=True)
         return Response(serializer.data)
-    
+
 
 class DetailedDisease(APIView):
     """retrieve the detail for only one disease"""

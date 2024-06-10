@@ -5,7 +5,7 @@ from backend.models import Disease
 
 class DiseasesNamesSerializer(serializers.ModelSerializer):
     """diseases names and labels model serializer"""
-    
+
     class Meta:
         model = Disease
         fields = ['id', 'name', 'label']
