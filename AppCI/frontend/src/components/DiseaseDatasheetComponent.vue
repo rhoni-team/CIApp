@@ -55,7 +55,7 @@ defineProps<{
               :key="key"
               class="py-4"
             >
-              {{ warning }}
+              {{ warning.label }}
             </p>
           </div>
           <form
@@ -73,7 +73,7 @@ defineProps<{
       </div>
 
       <div class="disease-datasheet-icons-wrapper">
-        <div v-if="diseaseSheet.cautions?.list != 0">
+        <div v-if="diseaseSheet.cautions?.list">
         <!-- <div
           v-for="(item, key) in diseaseSheet.cautions?.list"
           :key="key"
