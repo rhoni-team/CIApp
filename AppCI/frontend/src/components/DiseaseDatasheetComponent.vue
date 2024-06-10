@@ -20,7 +20,7 @@ defineProps<{
     v-if="diseaseSheet"
     class="disease-datasheet-wrapper"
   >
-  {{ diseaseSheet }}
+    {{ diseaseSheet }}
     <div class="disease-title-wrapper">
       <div class="disease-type-icon-wrapper">
         <bug-icon class="size-6 text-pink-400" />
@@ -74,7 +74,7 @@ defineProps<{
 
       <div class="disease-datasheet-icons-wrapper">
         <div v-if="diseaseSheet.cautions?.list">
-        <!-- <div
+          <!-- <div
           v-for="(item, key) in diseaseSheet.cautions?.list"
           :key="key"
           class="tooltip"
@@ -174,8 +174,10 @@ defineProps<{
         >
           {{ diseaseSheet.isolation?.isolationTime }}
         </div>
-        <div v-if="diseaseSheet.isolation?.isolationPeriod"
-            class="badge badge-primary">
+        <div
+          v-if="diseaseSheet.isolation?.isolationPeriod"
+          class="badge badge-primary"
+        >
           {{ diseaseSheet.isolation?.isolationPeriod }}
         </div>
       </div>

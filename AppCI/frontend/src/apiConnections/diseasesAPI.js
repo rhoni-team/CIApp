@@ -20,20 +20,15 @@ export async function getDiseasesListAPI() {
 export async function getDetailedDiseaseAPI(disease_id) {
   // get data for a given disease from REST API
   let disease_data = null;
-  let response_status = null;
-  let error_message = null;
 
   try {
     let response = await axios.get("api/diseases/" + disease_id);
     disease_data = await response.data
-    response_status = response.status;
     return disease_data
 
   } catch(err) {
       if (err.response) {
-        response_status = err.response.status
-        error_message = "No existe una enfermedad para el ID ingresado"
-        return error_message
+        console.error('error: ', err.response.status);
       }
     }
 }

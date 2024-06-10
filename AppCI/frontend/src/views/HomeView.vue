@@ -7,7 +7,7 @@
 import { getDiseasesListAPI, getDetailedDiseaseAPI } from '../apiConnections/diseasesAPI.js';
 
 // types
-import type DiseaseDatasheet from '../types/DiseaseDatasheet';
+import type { DiseaseDetail, DiseasesNames } from '../types/DiseaseDetail';
 
 // components
 import DiseaseDatasheetComponent from '../components/DiseaseDatasheetComponent.vue';
@@ -17,8 +17,8 @@ import { ref, onMounted, watch } from 'vue';
 
 
 const diseaseSelected = ref<string | null>(null);
-const diseaseList = ref<any[]>([]);
-const detailedDisease = ref<{ [key: string]: DiseaseDetail }>({});
+const diseaseList = ref<DiseasesNames[]>([]);
+const detailedDisease = ref<DiseaseDetail>({});
 
 
 watch(diseaseSelected, async (newValue) => {
@@ -30,7 +30,7 @@ watch(diseaseSelected, async (newValue) => {
   }
 });
 
-const getDiseaseList = async (): Promise<any[]> => {
+const getDiseaseList = async (): Promise<DiseasesNames[]> => {
   const response = await getDiseasesListAPI();
   return response
 }

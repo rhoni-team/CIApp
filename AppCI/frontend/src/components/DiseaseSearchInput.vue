@@ -26,7 +26,7 @@ defineEmits<{
         Selecciona una enfermedad...
       </option>
       <option
-        v-for="(item, key) in diseaseList"
+        v-for="item in diseaseList"
         :key="item.id"
         :value="item.id"
       >
