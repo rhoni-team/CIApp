@@ -18,7 +18,7 @@ import { ref, onMounted, watch } from 'vue';
 
 const diseaseSelected = ref<string | null>(null);
 const diseaseList = ref<DiseasesNames[]>([]);
-const detailedDisease = ref<DiseaseDetail>({});
+const detailedDisease = ref<DiseaseDetail | null>(null);
 
 
 watch(diseaseSelected, async (newValue) => {
