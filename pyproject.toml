@@ -1,6 +1,6 @@
 [AppCI]
 name = "AppCI"
-version = "0.5.0"
+version = "0.6.0"
 
 [tool.autopep8]
 max_line_length = 120

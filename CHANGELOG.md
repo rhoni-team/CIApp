@@ -2,6 +2,65 @@
 
 
 
+## v0.6.0 (2024-06-20)
+
+### Chore
+
+* chore: Add a new blank end line ([`4e87ea0`](https://github.com/rhoni-team/AppCI/commit/4e87ea0a8c831ecf756a177e0ef32a3b6d94bb95))
+
+* chore: Add new interfaces and types ([`b3ad5b7`](https://github.com/rhoni-team/AppCI/commit/b3ad5b78a88c350a1ec257b1b38fcf1933d59289))
+
+* chore: Create a declaration file for DiseasesAPI JS file ([`51b20d6`](https://github.com/rhoni-team/AppCI/commit/51b20d6f6c79c25a526b3ca9310a3345baa914e4))
+
+* chore: run autopep and pylint ([`6009350`](https://github.com/rhoni-team/AppCI/commit/6009350034c4d46dee2dd7d7e056faf4df1bd7f9))
+
+### Feature
+
+* feat: add types ([`dfd86a4`](https://github.com/rhoni-team/AppCI/commit/dfd86a4e64cfdf7cf68863ee701e3d3cd2f0df3c))
+
+* feat: call api to get disease detailed data ([`bd41ae0`](https://github.com/rhoni-team/AppCI/commit/bd41ae0ff84c241468951b8e0393a870887916bd))
+
+* feat: send ordered data to client ([`2fcb165`](https://github.com/rhoni-team/AppCI/commit/2fcb165015e9c8673bb708c58488483de10ef8a3))
+
+* feat: functions to order api data ([`cb5a7d1`](https://github.com/rhoni-team/AppCI/commit/cb5a7d1b50acbcdedbf3cfde8c20e33b25c892f0))
+
+* feat: send prop of disease list to input component ([`d27e29f`](https://github.com/rhoni-team/AppCI/commit/d27e29fcf688431c48d11d8ce0fb0a53eca1f887))
+
+* feat: show label and emit id on input ([`cf80b86`](https://github.com/rhoni-team/AppCI/commit/cf80b86ff7377f7005c4f26f193ef295307f8d1f))
+
+### Fix
+
+* fix: Fix component imports and rendering sections ([`eaf37e2`](https://github.com/rhoni-team/AppCI/commit/eaf37e24f70c097aea504c6ce644fe64643c432a))
+
+* fix: Fix missing imports and remove console logs ([`bc69115`](https://github.com/rhoni-team/AppCI/commit/bc691151a0a820ca7d772c3ec22291a5aa5df5ae))
+
+* fix: Add a missing type ([`897e184`](https://github.com/rhoni-team/AppCI/commit/897e184a458110fec69cbd7c2b46bf4ed4965713))
+
+* fix: set null as diseaseDetail default ([`ffa0036`](https://github.com/rhoni-team/AppCI/commit/ffa00364ecb20d9ef10db57d8514a4a3b71625fe))
+
+* fix: lint errors ([`558d847`](https://github.com/rhoni-team/AppCI/commit/558d847f8811fe4200d3691873bba8077b2451fb))
+
+* fix: show label in warnings ([`8cd0054`](https://github.com/rhoni-team/AppCI/commit/8cd005449f05e1397d5f05260aedd14869388d8a))
+
+* fix: add warning to  disease data ([`7fe8680`](https://github.com/rhoni-team/AppCI/commit/7fe8680749f4e3ad5ae1c974e1b7bd52379c6656))
+
+### Refactor
+
+* refactor: replace datasheet component with disease parameters ([`dd6ce67`](https://github.com/rhoni-team/AppCI/commit/dd6ce6732dd86aad53023c5303abc8410529edd6))
+
+* refactor: change file name ([`e33ab0d`](https://github.com/rhoni-team/AppCI/commit/e33ab0d41be3d2d6fb029a12f0979d436ce7d090))
+
+### Unknown
+
+* Merge pull request #46 from rhoni-team/31.connect_frontend_and_backend
+
+31.connect frontend and backend ([`9209744`](https://github.com/rhoni-team/AppCI/commit/9209744b28beca5f123cbfea5b0188b853bf1b7f))
+
+* improve: Add a new icon file ([`b1e839e`](https://github.com/rhoni-team/AppCI/commit/b1e839ec081442a9dc6a577bf7ceaf080c6f1fbd))
+
+* Merge branch &#39;main&#39; into 31.connect_frontend_and_backend ([`6ee1136`](https://github.com/rhoni-team/AppCI/commit/6ee1136ac6b0ad1071df1008b1a687a1c4048c58))
+
+
 ## v0.5.0 (2024-06-06)
 
 ### Unknown
@@ -15,13 +74,39 @@ Calculator component ([`89a6d3c`](https://github.com/rhoni-team/AppCI/commit/89a
 
 ## v0.4.0 (2024-06-06)
 
+### Build
+
+* build: install axios ([`1282b57`](https://github.com/rhoni-team/AppCI/commit/1282b57b1fca4e124d0474635c3e775c44ad8be3))
+
 ### Chore
+
+* chore: add temporary buttons to test API ([`9ab99a9`](https://github.com/rhoni-team/AppCI/commit/9ab99a9122900ca67fb95a1b21d6ba000df5bd99))
+
+* chore: button to test diseases data list ([`097aeaa`](https://github.com/rhoni-team/AppCI/commit/097aeaa2974934d11bc4fcd095783d463f9b01f4))
+
+* chore: remove hello rhonies view ([`8845152`](https://github.com/rhoni-team/AppCI/commit/88451521e5848c28a730b1591553d7141d026464))
+
+* chore: install django rest framework ([`2ecb556`](https://github.com/rhoni-team/AppCI/commit/2ecb55633d2ec3c6463d188876a8b499b567204e))
 
 * chore: Add icons to the top navbar component ([`db3d905`](https://github.com/rhoni-team/AppCI/commit/db3d9056ff0a955e8f71540cf3824b96a0c58dc1))
 
 * chore: Delete unused files from assets ([`3047b3c`](https://github.com/rhoni-team/AppCI/commit/3047b3cc474faa4f979a8da3a2da0cc82685a451))
 
 * chore: Add icons for the dark-light button component ([`cf02805`](https://github.com/rhoni-team/AppCI/commit/cf02805cef199b42414cf5166bf5e05f355f5b9f))
+
+### Feature
+
+* feat: get detail for a given disease ([`2fe0bac`](https://github.com/rhoni-team/AppCI/commit/2fe0bacc323b275ba3d81227ef80152e78892c4d))
+
+* feat: add complete data disease serializer ([`335de98`](https://github.com/rhoni-team/AppCI/commit/335de98d3c2ac93fb426ad1e6e511351fd54ee51))
+
+* feat: get diseases data list in frontend ([`3510799`](https://github.com/rhoni-team/AppCI/commit/351079936a40f16806a9b9d0babf409f198eb7c2))
+
+* feat: url to get diseases list ([`2bbd59a`](https://github.com/rhoni-team/AppCI/commit/2bbd59a9e42888e45eda7bb1070a330b868e1b13))
+
+* feat: view to get diseases list ([`2e70f44`](https://github.com/rhoni-team/AppCI/commit/2e70f4496be01a100860c2b3c00e529b8efd5da5))
+
+* feat: diseases list serializer ([`59091ac`](https://github.com/rhoni-team/AppCI/commit/59091aca9aa6ef6fbd862850d39a9bd4291b89f2))
 
 ### Refactor
 
@@ -32,6 +117,8 @@ Calculator component ([`89a6d3c`](https://github.com/rhoni-team/AppCI/commit/89a
 * Merge pull request #42 from rhoni-team/34-disease-datasheet
 
 34 disease datasheet ([`dfa906b`](https://github.com/rhoni-team/AppCI/commit/dfa906bb501fd51cb51cc80ecdb56a4b93ca725e))
+
+* feat add detailed disease view ([`14242b8`](https://github.com/rhoni-team/AppCI/commit/14242b8873f91dc5ff2a6e76c12f15b4d670f259))
 
 * improve: Change the data use logic to matching the &#39;Data Provider Pattern&#39; ([`d5663fa`](https://github.com/rhoni-team/AppCI/commit/d5663fabf56098f1e3e589b2d769eb8cfc772021))
 
