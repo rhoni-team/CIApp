@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { DiseasesNames } from '@/types/DiseasesNames';
 
 const diseaseSelected = ref<string | null>(null);
 
 defineProps<{
-  diseaseList: string[];
+  diseaseList: DiseasesNames[];
 }>();
 
 defineEmits<{
