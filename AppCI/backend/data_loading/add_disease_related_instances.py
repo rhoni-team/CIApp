@@ -22,6 +22,7 @@ class AddDiseasesData:
         self.add_other_isolation_to_instance_data()
         self.add_mandatory_declaration_to_instance_data()
         self.add_room_sharing_to_instance_data()
+        self.add_warning_to_instance_data()
 
     def add_cleaning_types_to_instance_data(self):
         """add cleaning type instances. It is a many to many related model"""
@@ -68,6 +69,13 @@ class AddDiseasesData:
             cell_content=self.row_data["isolation_unit"],
             model_name="UnitsOfTime")
         self.disease_instance_data["isolation_unit"] = isolation_unit
+
+    def add_warning_to_instance_data(self):
+        """add warning to instance data dictionary"""
+        isolation_warning = self.get_related_instance(
+            cell_content=self.row_data["advertencia"],
+            model_name="IsolationWarnings")
+        self.disease_instance_data["isolation_warnings"] = isolation_warning
 
     def get_related_instance(self, cell_content: str, model_name: str) -> "model":
         """get the related disease FK instance from cell content"""

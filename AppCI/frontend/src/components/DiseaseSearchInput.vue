@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { DiseasesNames } from '@/types/DiseasesNames';
 
 const diseaseSelected = ref<string | null>(null);
 
 defineProps<{
-  diseaseList: string[];
+  diseaseList: DiseasesNames[];
 }>();
 
 defineEmits<{
@@ -26,10 +27,11 @@ defineEmits<{
         Selecciona una enfermedad...
       </option>
       <option
-        v-for="(item, key) in diseaseList"
-        :key="key"
+        v-for="item in diseaseList"
+        :key="item.id"
+        :value="item.id"
       >
-        {{ item }}
+        {{ item.label }}
       </option>
     </select>
   </div>
