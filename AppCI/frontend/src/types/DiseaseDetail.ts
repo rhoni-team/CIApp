@@ -10,40 +10,46 @@ interface CleaningType {
   label: string;
 }
 
+interface Warnings {
+  id: number;
+  name: string;
+  label: string;
+}
+
 export interface DiseaseDetail {
     id: number;
     name: string;
     type: string | null;
-    info: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+    info: string[];
     cautions: {
-      precautions: Precautions;
-      list: string;
-      info: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
-      files: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+      precautions: Precautions[];
+      // list: string;
+      info: string[]; 
+      files: string[];
     };
     cleaning: {
       cleaning_type: CleaningType[];
-      list: string[];
-      info: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
-      files: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+      // list: string[];
+      info: string[];
+      files: string[];
     };
     isolation: {
       isolationTime: number;
       isolationPeriod: string;
-      info: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
-      files: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+      info: string[];
+      files: string[];
     };
     mandatoryNotification: {
       notify: boolean;
-      info: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
-      files: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+      info: string[];
+      files: string[];
     };
     other_isolation: string;
     roomSharing: {
       shareable: boolean;
-      info: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
-      files: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+      info: string[];
+      files: string[];
     };
-    warnings: string[];
+    warnings: Warnings[];
     withAtb: boolean;
   }
