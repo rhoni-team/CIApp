@@ -3,14 +3,15 @@ import infoIcon from '@/assets/icons/infoIcon.vue';
 import fileIcon from '@/assets/icons/fileIcon.vue';
 import okIcon from '@/assets/icons/okIcon.vue';
 import noIcon from '@/assets/icons/noIcon.vue';
+import xMarkIcon from '@/assets/icons/xMarkIcon.vue';
 import warningIcon from '@/assets/icons/warningIcon.vue';
 import bugIcon from '@/assets/icons/bugIcon.vue';
 import squaresIcon from '@/assets/icons/squaresIcon.vue';
 
-import type DiseaseDatasheet from '@/types/DiseaseDatasheet';
+import type { DiseaseDetail } from '@/types/DiseaseDetail';
 
 defineProps<{
-  diseaseSheet: DiseaseDatasheet | null
+  diseaseSheet: DiseaseDetail | null
 }>();
 
 </script>
@@ -20,7 +21,6 @@ defineProps<{
     v-if="diseaseSheet"
     class="disease-datasheet-wrapper"
   >
-    {{ diseaseSheet }}
     <div class="disease-title-wrapper">
       <div class="disease-type-icon-wrapper">
         <bug-icon class="size-6 text-pink-400" />
@@ -73,44 +73,47 @@ defineProps<{
       </div>
 
       <div class="disease-datasheet-icons-wrapper">
-        <div v-if="diseaseSheet.cautions?.list">
-          <!-- <div
-          v-for="(item, key) in diseaseSheet.cautions?.list"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        > -->
-          <squares-icon
-            :id="`id`"
-            class="size-14"
-          />
+        <div v-if="diseaseSheet.cautions?.precautions">
+          <div
+            v-for="(item, key) in diseaseSheet.cautions.precautions"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item.label}`"
+          >
+            <squares-icon
+              :id="`id`"
+              class="size-14"
+            />
+          </div>
         </div>
       </div>
 
       <div class="disease-datasheet-files-wrapper">
         <div
-          v-for="(item, key) in diseaseSheet.cautions?.info"
+          v-for="(item, key) in diseaseSheet.cautions.info"
           :key="key"
           class="tooltip"
           :data-tip="`${item}`"
         >
           <info-icon class="size-11 text-orange-400" />
         </div>
-        <div
-          v-for="(item, key) in diseaseSheet.cautions?.files"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        >
-          <div class="disease-datasheet-files-icon-wrapper">
-            <file-icon
-              :id="`caution-file-${key}`"
-              class="size-10 text-blue-400"
-            />
-            <label
-              :for="`caution-file-${key}`"
-              class="font-thin"
-            >PDF</label>
+        <div v-if="diseaseSheet.cautions?.files.length">
+          <div
+            v-for="(item, key) in diseaseSheet.cautions.files"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item}`"
+          >
+            <div class="disease-datasheet-files-icon-wrapper">
+              <file-icon
+                :id="`caution-file-${key}`"
+                class="size-10 text-blue-400"
+              />
+              <label
+                :for="`caution-file-${key}`"
+                class="font-thin"
+              >PDF</label>
+            </div>
           </div>
         </div>
       </div>
@@ -121,43 +124,49 @@ defineProps<{
       </div>
 
       <div class="disease-datasheet-icons-wrapper">
-        <div
-          v-for="(item, key) in diseaseSheet.cleaning?.list"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        >
-          <squares-icon
-            :id="`id-${key}`"
-            class="size-14"
-          />
+        <div v-if="diseaseSheet.cleaning?.cleaning_type">
+          <div
+            v-for="(item, key) in diseaseSheet.cleaning.cleaning_type"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item.label}`"
+          >
+            <squares-icon
+              :id="`id-${key}`"
+              class="size-14"
+            />
+          </div>
         </div>
       </div>
 
       <div class="disease-datasheet-files-wrapper">
-        <div
-          v-for="(item, key) in diseaseSheet.cleaning?.info"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        >
-          <info-icon class="size-11 text-orange-400" />
+        <div v-if="diseaseSheet.cleaning?.info.length">
+          <div
+            v-for="(item, key) in diseaseSheet.cleaning.info"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item}`"
+          >
+            <info-icon class="size-11 text-orange-400" />
+          </div>
         </div>
-        <div
-          v-for="(item, key) in diseaseSheet.cleaning?.files"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        >
-          <div class="disease-datasheet-files-icon-wrapper">
-            <file-icon
-              :id="`cleaning-file-${key}`"
-              class="size-10 text-blue-400"
-            />
-            <label
-              :for="`cleaning-file-${key}`"
-              class="font-thin"
-            >PDF</label>
+        <div v-if="diseaseSheet.cleaning?.files.length">
+          <div
+            v-for="(item, key) in diseaseSheet.cleaning.files"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item}`"
+          >
+            <div class="disease-datasheet-files-icon-wrapper">
+              <file-icon
+                :id="`cleaning-file-${key}`"
+                class="size-10 text-blue-400"
+              />
+              <label
+                :for="`cleaning-file-${key}`"
+                class="font-thin"
+              >PDF</label>
+            </div>
           </div>
         </div>
       </div>
@@ -172,40 +181,44 @@ defineProps<{
           v-if="diseaseSheet.isolation?.isolationTime"
           class="badge badge-primary badge-outline"
         >
-          {{ diseaseSheet.isolation?.isolationTime }}
+          {{ diseaseSheet.isolation.isolationTime }}
         </div>
         <div
           v-if="diseaseSheet.isolation?.isolationPeriod"
           class="badge badge-primary"
         >
-          {{ diseaseSheet.isolation?.isolationPeriod }}
+          {{ diseaseSheet.isolation.isolationPeriod }}
         </div>
       </div>
 
       <div class="disease-datasheet-files-wrapper">
-        <div
-          v-for="(item, key) in diseaseSheet.isolation?.info"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        >
-          <info-icon class="size-11 text-orange-400" />
+        <div v-if="diseaseSheet.isolation?.info.length">
+          <div
+            v-for="(item, key) in diseaseSheet.isolation.info"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item}`"
+          >
+            <info-icon class="size-11 text-orange-400" />
+          </div>
         </div>
-        <div
-          v-for="(item, key) in diseaseSheet.isolation?.files"
-          :key="key"
-          class="tooltip"
-          :data-tip="`${item}`"
-        >
-          <div class="disease-datasheet-files-icon-wrapper">
-            <file-icon
-              :id="`isolation-file-${key}`"
-              class="size-10 text-blue-400"
-            />
-            <label
-              :for="`isolation-file-${key}`"
-              class="font-thin"
-            >PDF</label>
+        <div v-if="diseaseSheet.isolation?.files.length">
+          <div
+            v-for="(item, key) in diseaseSheet.isolation.files"
+            :key="key"
+            class="tooltip"
+            :data-tip="`${item}`"
+          >
+            <div class="disease-datasheet-files-icon-wrapper">
+              <file-icon
+                :id="`isolation-file-${key}`"
+                class="size-10 text-blue-400"
+              />
+              <label
+                :for="`isolation-file-${key}`"
+                class="font-thin"
+              >PDF</label>
+            </div>
           </div>
         </div>
       </div>
@@ -227,13 +240,23 @@ defineProps<{
           />
         </div>
         <div
+          v-else-if="diseaseSheet.mandatoryNotification?.notify === false"
+          class="disease-datasheet-boolean-icon-wrapper"
+        >
+          <label for="mandatory-notification-ok-icon">NO</label>
+          <no-icon
+            id="mandatory-notification-ok-icon"
+            class="size-10 text-red-500"
+          />
+        </div>
+        <div
           v-else
           class="disease-datasheet-boolean-icon-wrapper"
         >
-          <label for="mandatory-notification-no-icon">NO</label>
-          <no-icon
-            id="mandatory-notification-no-icon"
-            class="size-10 text-red-600"
+          <label for="mandatory-notification-no-icon">NO HAY DATOS</label>
+          <x-mark-icon
+            id="mandatory-notification-null-icon"
+            class="size-10 text-slate-400"
           />
         </div>
       </div>
@@ -273,7 +296,7 @@ defineProps<{
 
       <div class="disease-datasheet-boolean-wrapper">
         <div
-          v-if="diseaseSheet.roomSharing?.shareable"
+          v-if="diseaseSheet.roomSharing?.shareable === true"
           class="disease-datasheet-boolean-icon-wrapper"
         >
           <label for="sharing-ok-icon">SI</label>
@@ -283,13 +306,23 @@ defineProps<{
           />
         </div>
         <div
-          v-else
+          v-else-if="diseaseSheet.roomSharing?.shareable === false"
           class="disease-datasheet-boolean-icon-wrapper"
         >
           <label for="sharing-no-icon">NO</label>
           <no-icon
             id="sharing-no-icon"
             class="size-10 text-red-600"
+          />
+        </div>
+        <div
+          v-else
+          class="disease-datasheet-boolean-icon-wrapper"
+        >
+          <label for="sharing-null-icon">NO HAY DATOS</label>
+          <x-mark-icon
+            id="sharing-null-icon"
+            class="size-10 text-slate-400"
           />
         </div>
       </div>
