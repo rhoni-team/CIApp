@@ -7,7 +7,8 @@
 import { getDiseasesListAPI, getDetailedDiseaseAPI } from '../apiConnections/diseasesAPI.js';
 
 // types
-import type { DiseaseDetail, DiseasesNames } from '../types/DiseaseDetail';
+import type { DiseaseDetail } from '../types/DiseaseDetail';
+import type { DiseasesNames } from '../types/DiseasesNames';
 
 // components
 import DiseaseDatasheetComponent from '../components/DiseaseDatasheetComponent.vue';
@@ -24,7 +25,6 @@ const detailedDisease = ref<DiseaseDetail | null>(null);
 watch(diseaseSelected, async (newValue) => {
   if (newValue) {
     detailedDisease.value = await getDetailedDiseaseAPI(newValue);
-    console.log("detailedDisease.value", detailedDisease.value);
   } else {
     detailedDisease.value = null;
   }
