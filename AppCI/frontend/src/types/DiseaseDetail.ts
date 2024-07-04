@@ -22,7 +22,7 @@ export interface DiseaseDetail {
     type: string | null;
     info: string[];
     cautions: {
-      precautions: Precautions[];
+      precautions: Precautions;
       // list: string;
       info: string[]; 
       files: string[];

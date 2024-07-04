@@ -6,7 +6,6 @@ import noIcon from '@/assets/icons/noIcon.vue';
 import xMarkIcon from '@/assets/icons/xMarkIcon.vue';
 import warningIcon from '@/assets/icons/warningIcon.vue';
 import bugIcon from '@/assets/icons/bugIcon.vue';
-import squaresIcon from '@/assets/icons/squaresIcon.vue';
 
 import type { DiseaseDetail } from '@/types/DiseaseDetail';
 
@@ -75,15 +74,12 @@ defineProps<{
       <div class="disease-datasheet-icons-wrapper">
         <div v-if="diseaseSheet.cautions?.precautions">
           <div
-            v-for="(item, key) in diseaseSheet.cautions.precautions"
-            :key="key"
             class="tooltip"
-            :data-tip="`${item.label}`"
+            :data-tip="`${diseaseSheet.cautions.precautions.label}`"
           >
-            <squares-icon
-              :id="`id`"
-              class="size-14"
-            />
+            <div class="badge badge-secondary badge-outline">
+              {{ diseaseSheet.cautions.precautions.label }}
+            </div>
           </div>
         </div>
       </div>
@@ -131,10 +127,9 @@ defineProps<{
             class="tooltip"
             :data-tip="`${item.label}`"
           >
-            <squares-icon
-              :id="`id-${key}`"
-              class="size-14"
-            />
+            <div class="badge badge-info badge-outline">
+              {{ item.label }}
+            </div>
           </div>
         </div>
       </div>
@@ -188,6 +183,16 @@ defineProps<{
           class="badge badge-primary"
         >
           {{ diseaseSheet.isolation.isolationPeriod }}
+        </div>
+        <div
+          v-else
+          class="disease-datasheet-boolean-icon-wrapper"
+        >
+          <label for="mandatory-notification-no-icon">NO HAY DATOS</label>
+          <x-mark-icon
+            id="mandatory-notification-null-icon"
+            class="size-10 text-slate-400"
+          />
         </div>
       </div>
 
