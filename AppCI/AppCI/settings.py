@@ -13,19 +13,31 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 import re
 from pathlib import Path
-from dotenv import load_dotenv
-from time import sleep
+from xml.etree.ElementPath import find
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 # Determine which environment to load
 ENVIRONMENT = os.getenv('DJANGO_ENV', 'development')
 
+# load different environments for development or production
+env = environ.Env()
 if ENVIRONMENT == 'production':
-    load_dotenv(BASE_DIR / '.env.prod')
+    env.read_env(os.path.join(BASE_DIR.parent, '.env.prod'))
 else:
-    load_dotenv(BASE_DIR / '.env.dev')
+    env.read_env(os.path.join(BASE_DIR.parent, '.env.dev'))
+
+print(os.getenv('POSTGRES_DB'))
+print(os.getenv('POSTGRES_USER'))
+print(os.getenv('POSTGRES_PASSWORD'))
+print(os.getenv('PG_HOST'))
+print(os.getenv('PG_PORT'))
+print(os.getenv('DEBUG'))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -39,6 +51,7 @@ DEBUG = os.getenv('DEBUG', 'true').lower() == 'true'
 # Print the environment being loaded
 print(f"DEBUG: {DEBUG}")
 print(f"Loading environment: {ENVIRONMENT}")
+
 
 DJANGO_VITE_DEV_MODE = DEBUG
 # Using the same port as the dev port defined in vite.config.js
@@ -124,12 +137,6 @@ DATABASES = {
         'PORT': os.getenv('PG_PORT'),
     }
 }
-
-print(os.getenv('POSTGRES_DB'))
-print(os.getenv('POSTGRES_USER'))
-print(os.getenv('POSTGRES_PASSWORD'))
-print(os.getenv('PG_HOST'))
-print(os.getenv('PG_PORT'))
 
 
 # Password validation
