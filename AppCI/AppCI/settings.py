@@ -31,19 +31,12 @@ if ENVIRONMENT == 'production':
 else:
     env.read_env(os.path.join(BASE_DIR.parent, '.env.dev'))
 
-print(os.getenv('POSTGRES_DB'))
-print(os.getenv('POSTGRES_USER'))
-print(os.getenv('POSTGRES_PASSWORD'))
-print(os.getenv('PG_HOST'))
-print(os.getenv('PG_PORT'))
-print(os.getenv('DEBUG'))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-kd_0!ejgp&783=mow#53@n9d5#uw7_gf%h^u2$)vs9k24zo#@o'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'true').lower() == 'true'
