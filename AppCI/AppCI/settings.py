@@ -13,22 +13,38 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 import re
 from pathlib import Path
-from dotenv import load_dotenv
+from xml.etree.ElementPath import find
+import environ
 
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Determine which environment to load
+ENVIRONMENT = os.getenv('DJANGO_ENV', 'development')
+
+# load different environments for development or production
+env = environ.Env()
+if ENVIRONMENT == 'production':
+    env.read_env(os.path.join(BASE_DIR.parent, '.env.prod'))
+else:
+    env.read_env(os.path.join(BASE_DIR.parent, '.env.dev'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-kd_0!ejgp&783=mow#53@n9d5#uw7_gf%h^u2$)vs9k24zo#@o'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'true').lower() == 'true'
+
+# Print the environment being loaded
+print(f"DEBUG: {DEBUG}")
+print(f"Loading environment: {ENVIRONMENT}")
+
 
 DJANGO_VITE_DEV_MODE = DEBUG
 # Using the same port as the dev port defined in vite.config.js
@@ -107,9 +123,9 @@ WSGI_APPLICATION = 'AppCI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('PG_DB_NAME'),
-        'USER': os.getenv('PG_USER'),
-        'PASSWORD': os.getenv('PG_PASSWORD'),
+        'NAME': os.getenv('POSTGRES_DB'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': os.getenv('PG_HOST'),
         'PORT': os.getenv('PG_PORT'),
     }

@@ -7,11 +7,13 @@ on:
     branches: [ main ]
 
 env:
-  PG_DB_NAME: postgres
-  PG_USER: postgres
-  PG_PASSWORD: postgres
+  POSTGRES_DB: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
   PG_HOST: localhost
   PG_PORT: 5432
+  DJANGO_ENV: development
+  SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
 
 jobs:
   ci:
@@ -28,9 +30,9 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_DB: ${{ env.PG_DB_NAME }}
-          POSTGRES_USER: ${{ env.PG_USER }}
-          POSTGRES_PASSWORD: ${{ env.PG_PASSWORD }}
+          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
         ports:
           - 5432:5432
           # needed because the postgres container does not provide a healthcheck
