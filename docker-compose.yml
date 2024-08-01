@@ -4,12 +4,12 @@ services:
       context: .
       dockerfile: ./Dockerfile
     container_name: "django_appci"
-    ports:
-      - "5000:8000"
+    expose:
+      - "8000"
     volumes:
       - ./AppCI:/AppCI
-    command: gunicorn AppCI.wsgi:application --bind 0.0.0.0:8000
-             
+      # - static_volume:/home/AppCI/django/staticfiles
+    command: gunicorn AppCI.wsgi:application --bind 0.0.0.0:8000            
     env_file:
       - .env.prod
     environment:
@@ -33,5 +33,14 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+  nginx:
+    build: ./nginx
+    ports:
+      - 5000:80
+    depends_on:
+      - django
+    # volumes:
+    #   - static_volume:/home/AppCI/django/staticfiles
 volumes:
   postgres_data:
+  # static_volume:
