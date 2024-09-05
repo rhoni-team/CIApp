@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 import re
 from pathlib import Path
-from xml.etree.ElementPath import find
 import environ
 
 
@@ -79,6 +78,7 @@ LOCAL_APPS = [
 THIRD_APPS = [
     'django_vite',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
@@ -198,3 +198,34 @@ def immutable_file_test(path, url):
 WHITENOISE_IMMUTABLE_FILE_TEST = immutable_file_test
 
 DEBUG_PROPAGATE_EXCEPTIONS = False
+
+
+# SECURITY
+
+# cookies
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_HTTPONLY = True
+
+# subdomains
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# rest framework
+REST_FRAMEWORK = {
+    # 'DEFAULT_THROTTLE_CLASSES': [
+    #     'rest_framework.throttling.UserRateThrottle'
+    # ],
+    # 'DEFAULT_THROTTLE_RATES': {
+    #     'user': '500/day'  # Allow only 500 requests per day for authenticated users
+    # },
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication', ------ UNCOMMENT IN HTTPS
+    ],
+}
+
+# ssl  ------ UNCOMMENT IN HTTPS
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 86400 # one Day
+# SECURE_HSTS_PRELOAD = True
