@@ -52,8 +52,7 @@ DJANGO_VITE_DEV_SERVER_PORT = 3000
 DJANGO_VITE_MANIFEST_PATH = BASE_DIR / 'frontend' / \
     'static' / 'dist' / '.vite' / 'manifest.json'
 
-# ALLOWED_HOSTS = ['104.248.77.150', '127.0.0.1']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:8000", ]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
@@ -227,5 +226,5 @@ REST_FRAMEWORK = {
 
 # ssl  ------ UNCOMMENT IN HTTPS
 # SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_SECONDS = 86400 # one Day
+# SECURE_HSTS_SECONDS = 60 # It will be blocked for one minute. Change it if everything is ok.
 # SECURE_HSTS_PRELOAD = True
