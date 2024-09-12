@@ -14,6 +14,8 @@ services:
     environment:
       - DJANGO_ENV=production
       - PG_HOST=db
+    networks:
+      - app_network
     depends_on:
       db:
         condition: service_healthy
@@ -32,13 +34,43 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  nginx:
+    networks:
+      - app_network
+  nginx-proxy:
+    container_name: nginx-proxy
     build: ./nginx
     ports:
-      - 5001:80
+      - 8080:80
+      - 8443:443
     depends_on:
       - django
     volumes:
       - ./AppCI:/AppCI
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - vhost:/etc/nginx/vhost.d
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - app_network
+  # acme-companion:
+  #   image: nginxproxy/acme-companion
+  #   env_file:
+  #     - ./.env.staging.proxy-companion
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - certs:/etc/nginx/certs
+  #     - html:/usr/share/nginx/html
+  #     - vhost:/etc/nginx/vhost.d
+  #     - acme:/etc/acme.sh
+  #   depends_on:
+  #     - nginx-proxy
 volumes:
   postgres_data:
+  certs:
+  html:
+  vhost:
+  acme:
+
+networks:
+  app_network:
+    driver: bridge
