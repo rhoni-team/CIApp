@@ -38,5 +38,7 @@ services:
       - 5001:80
     depends_on:
       - django
+    volumes:
+      - ./AppCI:/AppCI
 volumes:
   postgres_data:
