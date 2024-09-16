@@ -1,5 +1,3 @@
-FROM nginx
-RUN rm /etc/nginx/conf.d/default.conf
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/vhost.d/default
+FROM nginxproxy/nginx-proxy
+COPY vhost.d/vhost.d/appci.rhonidev.com /etc/nginx/vhost.d/appci.rhonidev.com
 COPY custom.conf /etc/nginx/conf.d/custom.conf
