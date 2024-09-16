@@ -49,7 +49,7 @@ services:
       - ./AppCI:/AppCI
       - certs:/etc/nginx/certs
       - html:/usr/share/nginx/html
-      - ./nginx/vhost.d/appci.rhonidev.com:/etc/nginx/vhost.d/appci.rhonidev.com:ro
+      - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - app_network
