@@ -38,7 +38,7 @@ services:
       - app_network
   nginx-proxy:
     container_name: nginx-proxy
-    build: ./nginx
+    # build: ./nginx
     ports:
       - 80:80
       - 443:443
@@ -48,7 +48,7 @@ services:
       - ./AppCI:/AppCI
       - certs:/etc/nginx/certs
       - html:/usr/share/nginx/html
-      - vhost:/etc/nginx/vhost.d
+      - ./nginx/vhost.d/appci.rhonidev.com:/etc/nginx/vhost.d/appci.rhonidev.com:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - app_network
