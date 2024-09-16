@@ -37,6 +37,7 @@ services:
     networks:
       - app_network
   nginx-proxy:
+    image: nginxproxy/nginx-proxy:latest
     container_name: nginx-proxy
     # build: ./nginx
     ports:
