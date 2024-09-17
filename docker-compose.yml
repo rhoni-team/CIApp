@@ -52,20 +52,20 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - app_network
-  # acme-companion:
-  #   image: nginxproxy/acme-companion
-  #   env_file:
-  #     - ./.env.staging.proxy-companion
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #     - certs:/etc/nginx/certs
-  #     - html:/usr/share/nginx/html
-  #     - vhost:/etc/nginx/vhost.d
-  #     - acme:/etc/acme.sh
-  #   depends_on:
-  #     - nginx-proxy
-  #   networks:
-  #     - app_network
+  acme-companion:
+    image: nginxproxy/acme-companion
+    env_file:
+      - ./.env.staging.proxy-companion
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - vhost:/etc/nginx/vhost.d
+      - acme:/etc/acme.sh
+    depends_on:
+      - nginx-proxy
+    networks:
+      - app_network
 volumes:
   postgres_data:
   certs:
