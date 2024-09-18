@@ -62,7 +62,7 @@ services:
       - ./webroot:/var/www/certbot
     depends_on:
       - nginx-proxy
-    command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive --email nataliamdenk11@gmail.com --agree-tos --no-eff-email --staging -d appci.rhonidev.com  -d www.appci.rhonidev.com
+    command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive --email nataliamdenk11@gmail.com --agree-tos --no-eff-email --staging -d appci.rhonidev.com
 
 volumes:
   postgres_data:
