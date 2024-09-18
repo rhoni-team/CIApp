@@ -50,6 +50,7 @@ services:
       - certbot-var:/var/lib/letsencrypt
       - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./webroot:/var/www/certbot
     networks:
       - app_network
   certbot:
@@ -58,16 +59,17 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
+      - ./webroot:/var/www/certbot
     depends_on:
       - nginx-proxy
-    command: certonly --email nataliamdenk11@gmail.com --agree-tos --no-eff-email --staging -d appci.rhonidev.com  -d www.appci.rhonidev.com
+    command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive--email nataliamdenk11@gmail.com --agree-tos --no-eff-email --staging -d appci.rhonidev.com  -d www.appci.rhonidev.com
 
 volumes:
   postgres_data:
   certbot-etc:
   certbot-var:
   vhost:
-
+  webroot:
 networks:
   app_network:
     driver: bridge
