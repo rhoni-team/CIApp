@@ -39,6 +39,11 @@ server {
     # ssl_certificate /etc/nginx/certs;
     # ssl_certificate_key /etc/letsencrypt/live/appci.rhonidev.com/privkey.pem;
 
+    location /.well-known/acme-challenge/ {
+        root /usr/share/nginx/html;
+        allow all;
+    }
+
     location / {
         proxy_pass http://AppCI;
         proxy_set_header Host $host;
