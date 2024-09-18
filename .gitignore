@@ -130,7 +130,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.env.staging.proxy-companion
+.env.staging.certbot
 
 # Spyder project settings
 .spyderproject
