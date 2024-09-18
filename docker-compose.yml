@@ -46,32 +46,27 @@ services:
       - django
     volumes:
       - ./AppCI:/AppCI
-      - certs:/etc/nginx/certs
-      - html:/usr/share/nginx/html
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
       - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - app_network
-  # acme-companion:
-  #   image: nginxproxy/acme-companion
-  #   env_file:
-  #     - ./.env.staging.proxy-companion
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock:ro
-  #     - certs:/etc/nginx/certs
-  #     - html:/usr/share/nginx/html
-  #     - vhost:/etc/nginx/vhost.d
-  #     - acme:/etc/acme.sh
-  #   depends_on:
-  #     - nginx-proxy
-  #   networks:
-  #     - app_network
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - nginx-proxy
+    command: certonly --email nataliamdenk11@gmail.com --agree-tos --no-eff-email --staging -d appci.rhonidev.com  -d www.appci.rhonidev.com
+
 volumes:
   postgres_data:
-  certs:
-  html:
+  certbot-etc:
+  certbot-var:
   vhost:
-  acme:
 
 networks:
   app_network:
