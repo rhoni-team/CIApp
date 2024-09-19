@@ -210,5 +210,5 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
 
 SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 10 # It will be blocked for ten seconds. Change it if everything is ok.
+SECURE_HSTS_SECONDS = 86400 # It will be blocked for one day.
 SECURE_HSTS_PRELOAD = True
