@@ -192,12 +192,12 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # rest framework
 REST_FRAMEWORK = {
-    # 'DEFAULT_THROTTLE_CLASSES': [
-    #     'rest_framework.throttling.UserRateThrottle'
-    # ],
-    # 'DEFAULT_THROTTLE_RATES': {
-    #     'user': '500/day'  # Allow only 500 requests per day for authenticated users
-    # },
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '500/day'  # Allow only 500 requests per day for authenticated users
+    },
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
