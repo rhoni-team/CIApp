@@ -16,7 +16,7 @@ services:
       - PG_HOST=db
     networks:
       - app_network
-    restart: unless-stopped
+    restart: on-failure
     depends_on:
       db:
         condition: service_healthy
@@ -25,7 +25,7 @@ services:
     container_name: "postgres_appci"
     ports:
       - "5435:5432"
-    restart: unless-stopped
+    restart: always
     env_file:
       -  ".env.prod"
     volumes:
@@ -52,7 +52,7 @@ services:
       - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./webroot:/var/www/certbot
-    restart: unless-stopped
+    restart: on-failure
     networks:
       - app_network
   certbot:
