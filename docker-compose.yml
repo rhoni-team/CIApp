@@ -16,6 +16,7 @@ services:
       - PG_HOST=db
     networks:
       - app_network
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
@@ -51,6 +52,7 @@ services:
       - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./webroot:/var/www/certbot
+    restart: unless-stopped
     networks:
       - app_network
   certbot:
