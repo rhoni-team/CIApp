@@ -7,7 +7,7 @@ services:
     expose:
       - "8000"
     volumes:
-      - ./AppCI:/AppCI
+      - AppCI:/AppCI
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
     command: gunicorn AppCI.wsgi:application --bind 0.0.0.0:8000            
