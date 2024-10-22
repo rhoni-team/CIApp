@@ -39,24 +39,6 @@ services:
       retries: 5
     networks:
       - shared_network
-#   nginx-proxy:
-#     container_name: nginx-proxy
-#     build: ./nginx
-#     ports:
-#       - 80:80
-#       - 443:443
-#     depends_on:
-#       - django
-#     volumes:
-#       - ./AppCI:/AppCI
-#       - certbot-etc:/etc/letsencrypt
-#       - certbot-var:/var/lib/letsencrypt
-#       - vhost:/etc/nginx/vhost.d
-#       - /var/run/docker.sock:/tmp/docker.sock:ro
-#       - ./webroot:/var/www/certbot
-#     restart: on-failure
-#     networks:
-#       - app_network
   certbot:
     image: certbot/certbot
     container_name: certbot
