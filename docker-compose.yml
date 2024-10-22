@@ -64,8 +64,8 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - ./webroot:/var/www/certbot
-    depends_on:
-      - nginx-reverse-proxy
+    # depends_on:
+    #   - nginx-reverse-proxy
 #    command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive --email nataliamdenk11@gmail.com --agree-tos --no-eff-email -d appci.rhonidev.com
     networks:
       - shared_network
