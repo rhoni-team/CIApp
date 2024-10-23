@@ -8,8 +8,8 @@ services:
       - "8000"
     volumes:
       - AppCI:/AppCI
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
+      - nginx_reverse_proxy_certbot-etc:/etc/letsencrypt
+      - nginx_reverse_proxy_certbot-var:/var/lib/letsencrypt
     command: gunicorn AppCI.wsgi:application --bind 0.0.0.0:8000            
     env_file:
       - .env.prod
@@ -39,23 +39,25 @@ services:
       retries: 5
     networks:
       - shared_network
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - ./webroot:/var/www/certbot
-    # depends_on:
-    #   - nginx-reverse-proxy
-#    command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive --email nataliamdenk11@gmail.com --agree-tos --no-eff-email -d appci.rhonidev.com
-    networks:
-      - shared_network
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot
+  #   volumes:
+  #     - certbot-etc:/etc/letsencrypt
+  #     - certbot-var:/var/lib/letsencrypt
+  #     - ./webroot:/var/www/certbot
+  #   depends_on:
+  #     - nginx-reverse-proxy
+  #  command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive --email nataliamdenk11@gmail.com --agree-tos --no-eff-email -d appci.rhonidev.com
+  #   networks:
+  #     - shared_network
 volumes:
   AppCI:
   postgres_data:
-  certbot-etc:
-  certbot-var:
+  nginx_reverse_proxy_certbot-etc:
+    external: true
+  nginx_reverse_proxy_certbot-var:
+    external: true
   vhost:
   webroot:
 networks:
