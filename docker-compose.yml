@@ -51,7 +51,6 @@ services:
 #    command: certonly --webroot --webroot-path=/var/www/certbot --non-interactive --email nataliamdenk11@gmail.com --agree-tos --no-eff-email -d appci.rhonidev.com
     networks:
       - shared_network
-    restart: unless-stopped
 volumes:
   AppCI:
   postgres_data:
