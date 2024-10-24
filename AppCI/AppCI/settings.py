@@ -180,35 +180,36 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEBUG_PROPAGATE_EXCEPTIONS = False
 
 
-# SECURITY
+if ENVIRONMENT == 'production':
+    # SECURITY
 
-# cookies
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
+    # cookies
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = True
 
-# subdomains
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    # subdomains
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-# rest framework
-REST_FRAMEWORK = {
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.UserRateThrottle'
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'user': '500/day'  # Allow only 500 requests per day for authenticated users
-    },
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication', #------ UNCOMMENT IN HTTPS
-    ],
-}
+    # rest framework
+    REST_FRAMEWORK = {
+        'DEFAULT_THROTTLE_CLASSES': [
+            'rest_framework.throttling.UserRateThrottle'
+        ],
+        'DEFAULT_THROTTLE_RATES': {
+            'user': '500/day'  # Allow only 500 requests per day for authenticated users
+        },
+        'DEFAULT_AUTHENTICATION_CLASSES': [
+            'rest_framework.authentication.BasicAuthentication',
+            'rest_framework.authentication.SessionAuthentication',
+            'rest_framework.authentication.TokenAuthentication', #------ UNCOMMENT IN HTTPS
+        ],
+    }
 
-# ssl  ------ UNCOMMENT IN HTTPS
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
+    # ssl  ------ UNCOMMENT IN HTTPS
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
 
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 86400 # It will be blocked for one day.
-SECURE_HSTS_PRELOAD = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 86400 # It will be blocked for one day.
+    SECURE_HSTS_PRELOAD = True
