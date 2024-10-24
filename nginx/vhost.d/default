@@ -1,9 +1,0 @@
-location /static/ {
-        alias /AppCI/static/;
-        add_header Access-Control-Allow-Origin *;
-    }
-
-location /media/ {
-    alias /AppCI/media/;
-    add_header Access-Control-Allow-Origin *;
-}
