@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import hamButtonIcon from '@/assets/icons/hamButtonIcon.vue';
-import lensIcon from '@/assets/icons/lensIcon.vue';
-import notifyBellIcon from '@/assets/icons/notifyBellIcon.vue';
+// import lensIcon from '@/assets/icons/lensIcon.vue';
+// import notifyBellIcon from '@/assets/icons/notifyBellIcon.vue';
 </script>
 
 <template>
@@ -25,7 +25,7 @@ import notifyBellIcon from '@/assets/icons/notifyBellIcon.vue';
         <a class="btn btn-ghost text-xl">AppCI</a>
       </div>
       <div class="navbar-end">
-        <button class="btn btn-ghost btn-circle">
+        <!-- <button class="btn btn-ghost btn-circle">
           <lens-icon />
         </button>
         <button class="btn btn-ghost btn-circle">
@@ -33,7 +33,7 @@ import notifyBellIcon from '@/assets/icons/notifyBellIcon.vue';
             <notify-bell-icon />
             <span class="badge badge-xs badge-info indicator-item" />
           </div>
-        </button>
+        </button> -->
       </div>
     </div>
   </nav>
